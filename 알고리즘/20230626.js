@@ -44,8 +44,3 @@ function solution(array) {
 function solution(array) {
   return array[parseInt(array.sort((a, b) => a - b).length / 2)];
 }
-
-//filter 함수는,
-//배열에서 특정 조건에 부합하는 값들만을 모아서 새로운 배열로 리턴하는 함수입니다.
-//filter 함수는 callback 함수에서 true를 리턴하는 element들을 모아서 새로운 배열을 만들어서 리턴합니다.
-
