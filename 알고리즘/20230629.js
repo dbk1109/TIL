@@ -38,10 +38,3 @@ function solution(my_string) {
   return my_string.replaceAll(/['a','e','i','o','u']/g, "");
 }
 //스포당해서 이거로 한것뿐이지 내실력은 아니다.
-
-//문자 반복 출력하기
-function solution(my_string, n) {
-  my_string = my_string.split("");
-  for (let i = 0; i < my_string.length - 1; i++) {}
-  return answer;
-}
