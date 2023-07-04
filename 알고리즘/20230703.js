@@ -59,16 +59,25 @@ function solution(n) {
 //    console.log(array[i], counter, result, last);
 //  }
 //}
+//function solution(array) {
+//  let Checker = "";
+//  let Counters = [];
+//  for (let i = 0; i < array.length; i++) {
+//    Checker = array.filter((el) => el == array[i]);
+//    Counters.push(Checker.length);
+//  }
+//  const maxCnt = [...Counters].sort()[Counters.length - 1];
+//  const maxCntIdx = Counters.findIndex((el) => {
+//    return el === maxCnt;
+//  });
+//  return Checker.length > 1 ? -1 : array[maxCntIdx];
+//}
 function solution(array) {
-  let Checker = "";
-  let Counters = [];
+  let map = new Map();
   for (let i = 0; i < array.length; i++) {
-    Checker = array.filter((el) => el == array[i]);
-    Counters.push(Checker.length);
+    map.set(array[i], (map.get(array[i]) || 0) + 1);
   }
-  const maxCnt = [...Counters].sort()[Counters.length - 1];
-  const maxCntIdx = Counters.findIndex((el) => {
-    return el === maxCnt;
-  });
-  return Checker.length > 1 ? -1 : array[maxCntIdx];
+  let max = Math.max(...[...map].map((v) => v[1]));
+  let count = [...map].filter((v) => v[1] === max).length;
+  return count > 1 ? -1 : [...map].find((v) => v[1] === max)[0];
 }
