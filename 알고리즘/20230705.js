@@ -90,7 +90,7 @@ function solution(array) {
 
 //외계행성의 나이
 function solution(age) {
-    const transform = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" };
+    const transform = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j" ];
     return age.toString().split("").map(el => transform[el]).join("");
 }
 //문자열 자체도 인덱스[] 접근가능
