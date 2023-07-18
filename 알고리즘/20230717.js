@@ -55,11 +55,3 @@ function solution(dots) {
     dots.sort();
     return Math.abs((dots[dots.length-1][0]-dots[0][0]) * (dots[dots.length-1][1]-dots[0][1]));
 }
-
-//가까운 수
-//가장 가까운 수가 여러 개일 경우 더 작은 수를 return 합니다.
-function solution(array, n) {
-  let newArr = array.map((x) => Math.abs(n - x));
-  let min = [...newArr].sort((a, b) => a - b)[0];
-  return array[newArr.indexOf(min)];
-}
