@@ -31,3 +31,27 @@ function solution(my_string) {
 // 정규식 /\D+/ 을 사용해도됨.
 
 //이진수 더하기
+function solution(bin1, bin2) {
+  return (parseInt(bin1, 2) + parseInt(bin2, 2)).toString(2);
+}
+//2진수 계산하는 함수를 한번 만들어보는것도 나중에 도움될듯
+
+//7의 개수
+function solution(array) {
+    return array.join('').split('').filter(x => x == 7).length;
+}
+
+//잘라서 배열로 저장하기
+function solution(my_str, n) {
+  let answer = [];
+  for (let i = 0; i < my_str.length; i += n) {
+    answer.push(my_str.substr(i, n));
+  }
+  return answer;
+}
+//  갓 정규표현식
+//function solution(my_str, n) {
+//  return my_str.match(new RegExp(`.{1,${n}}`, "g"));
+//}
+
+//삼각형의 완성조건 (2)
