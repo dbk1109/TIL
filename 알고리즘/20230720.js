@@ -53,5 +53,3 @@ function solution(my_str, n) {
 //function solution(my_str, n) {
 //  return my_str.match(new RegExp(`.{1,${n}}`, "g"));
 //}
-
-//삼각형의 완성조건 (2)
