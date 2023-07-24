@@ -46,5 +46,3 @@ function solution(spell, dic) {
 }
 //    return dic.some(s => spell.sort().toString() == [...s].sort().toString()) ? 1 : 2;
 //some() 메서드는 배열 안의 어떤 요소라도 주어진 판별 함수를 적어도 하나라도 통과하는지 테스트합니다. 
-
-//캐릭터의 좌표
