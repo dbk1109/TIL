@@ -66,5 +66,3 @@ function solution(polynomial) {
 //    if(num) answer.push(num);
 //    return answer.join(" + ");
 //}
-
-//안전지대
