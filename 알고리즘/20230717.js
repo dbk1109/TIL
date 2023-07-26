@@ -1,16 +1,16 @@
   //소인수분해
   function solution(n) {
-  var answer = [];
-  let checker = 2;
-  while (n >= 2) {
-    if (n % checker === 0) {
-      n = n / checker;
-      answer.push(checker);
-    } else {
-      checker++;
+    var answer = [];
+    let checker = 2;
+    while (n >= 2) {
+      if (n % checker === 0) {
+        n = n / checker;
+        answer.push(checker);
+      } else {
+        checker++;
+      }
     }
-  }
-  return [...new Set(answer)];
+    return [...new Set(answer)];
   }
   /// new Set() 은 중복값을 제거하기 때문에 중요!!!
 
