@@ -1,5 +1,4 @@
 //안전지대
-
 function solution(board) {
     let answer = [];
     let ansCounter = 0;
