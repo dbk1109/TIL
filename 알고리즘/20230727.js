@@ -23,3 +23,20 @@ function solution(a, b) {
 //function solution(a, b) {
 //  return (a / b).toString().length > 15 ? 2 : 1;
 //}
+
+//겹치는 선분의 길이
+function solution(lines) {
+  let answer = [];
+  let times = 0;
+  let dubble = [];
+  for (line of lines) {
+    for (let i = line[0]; i < line[1]; i++) {
+      answer.includes("" + i + (i + 1))
+        ? dubble.includes("" + i + (i + 1))
+          ? 0
+          : (times++, dubble.push("" + i + (i + 1)))
+        : answer.push("" + i + (i + 1));
+    }
+  }
+  return times;
+}
