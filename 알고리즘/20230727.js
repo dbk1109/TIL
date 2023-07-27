@@ -57,3 +57,26 @@ function solution(numlist, n) {
 //function solution(numlist, n) {
 //  return numlist.sort((a, b) => Math.abs(a - n) - Math.abs(b - n) || b - a);
 //}
+
+//로그인 성공?
+function solution(id_pw, db) {
+    let msg = "";
+    for ([id, pw] of db) {
+        if(id == id_pw[0]) {
+            if(pw == id_pw[1]) {
+                return "login";
+            } else {
+                return "wrong pw"
+            }
+        } else { 
+            msg = "fail";
+        }
+    }
+    return msg;
+}
+// map 아는건데..
+//function solution(id_pw, db) {
+//  const [id, pw] = id_pw;
+//  const map = new Map(db);
+//  return map.has(id) ? (map.get(id) === pw ? "login" : "wrong pw") : "fail";
+//}
