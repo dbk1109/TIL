@@ -40,3 +40,20 @@ function solution(lines) {
   }
   return times;
 }
+
+//특이한 정렬
+function solution(numlist, n) {
+    let test = new Object;
+    let dif = [];
+    [...numlist].forEach(x => test[x] = Math.abs(x - n));
+    let sorted = Object.entries(test).sort((a, b) => a[1] == b[1] ? b[0] - a[0] : a[1] - b[1]);
+    for (let i = 0; i < numlist.length; i++) {
+        dif.push(Number(sorted[i][0]));
+    }
+    return dif;
+}
+// 와.... sort에 대한 이해가 절실하게 필요하다. 
+//js의 sort함수를 보면 음수를 반환하면 a가 먼저, 양수면 b가 순서가 먼저 되도록 짜여져 있고, b랑 a의 거리가 같은 상황 즉 Math.abs(a - n) - Math.abs(b - n)이게 0이 되는 상황이 되면 ||연산자 뒤가 실행되면서 같은 거리일 경우 큰 수를 먼저 나오도록 하는거죠.
+//function solution(numlist, n) {
+//  return numlist.sort((a, b) => Math.abs(a - n) - Math.abs(b - n) || b - a);
+//}
