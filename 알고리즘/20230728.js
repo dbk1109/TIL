@@ -22,3 +22,14 @@ function solution(score) {
 //    );
 //  });
 //}
+
+//옹알이 (1)
+function solution(babbling) {
+  let words = ["aya", "ye", "woo", "ma"];
+  for (word of words) {
+    for (index in babbling) {
+      babbling[index] = babbling[index].replace(word, "*");
+    }
+  }
+  return babbling.filter((x) => !x.match(/[a-z]/)).length;
+}
