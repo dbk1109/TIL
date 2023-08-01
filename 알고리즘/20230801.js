@@ -28,3 +28,11 @@ function solution(num, total) {
     }
     return answer;
 }
+
+//다음에 올 숫자
+function solution(common) {
+    let isSame = common[0] - common[1] == common[1] - common[2] && common[0] - common[1] == common[common.length-2] - common[common.length-1];
+    return isSame ? common[common.length-1]+(common[1] - common[0]) : (
+        common.length > 1 ? common[common.length-1] * common[common.length-1] / common[common.length-2] : 0
+    )
+}
