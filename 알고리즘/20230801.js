@@ -19,3 +19,12 @@ function solution(A, B) {
 function solution(M, N) {
   return M * N - 1;
 }
+
+//연속된 수의 합
+function solution(num, total) {
+    var answer = [];
+    for (let i = total % num != 0? -parseInt(num/2)+1 : -parseInt(num/2); i <= (num/2); i++){
+        answer.push(parseInt(total/num)+i);
+    }
+    return answer;
+}
