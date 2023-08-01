@@ -72,3 +72,15 @@ rl.on('line', function (line) {  input = line.split(' ');
   console.log(str.repeat(n))
 });
 
+//대소문자 바꿔서 출력하기
+rl.on("line", function (line) {
+  input = line.split("");
+}).on("close", function () {
+  str = "";
+  for (n of input) {
+    n == n.toUpperCase() ? (str += n.toLowerCase()) : (str += n.toUpperCase());
+  }
+  console.log(str);
+});
+/// 아 이걸 맨날 놓치네
+//console.log([...str].map((e=>/[A-Z]/.test(e)?e.toLowerCase():e.toUpperCase())).join(""));
