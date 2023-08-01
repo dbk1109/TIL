@@ -41,7 +41,7 @@ function solution(chicken) {
     if(chicken / 10 < 1 ) return 0;
     return Math.floor(chicken / 10) + solution(Math.floor(chicken / 10) + (chicken % 10));
 }
-// 잘했다고 생각했는데 이건뭘까
+// 잘했다고 생각했는데 이건뭘까 세상에 참굇수가 많다.
 //function solution(chicken) {
 //    if (chicken == 0) return 0;
 //    return Math.floor(((chicken -10) / 9) + 1) // 처음 10마리를 사야 서비스1마리+1쿠폰 생성, 
