@@ -12,3 +12,10 @@ function solution(A, B) {
   }
   return -1;
 }
+// 미쳤다 이게 뭐냐; 어떻게 이런생각을 하냐..
+//let solution=(a,b)=>(b+b).indexOf(a)
+
+//종이 자르기
+function solution(M, N) {
+  return M * N - 1;
+}
