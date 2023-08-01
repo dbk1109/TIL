@@ -84,3 +84,8 @@ rl.on("line", function (line) {
 });
 /// 아 이걸 맨날 놓치네
 //console.log([...str].map((e=>/[A-Z]/.test(e)?e.toLowerCase():e.toUpperCase())).join(""));
+
+//특수문자 출력하기
+rl.on("close", function () {
+  console.log("!@#$%^&*(\\'\"<>?:;");
+});
