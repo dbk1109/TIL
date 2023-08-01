@@ -89,3 +89,15 @@ rl.on("line", function (line) {
 rl.on("close", function () {
   console.log("!@#$%^&*(\\'\"<>?:;");
 });
+
+//덧셈식 출력하기
+rl.on('line', function (line) {  input = line.split(' ');
+}).on('close', function () {
+  console.log(Number(input[0]) + " + " + Number(input[1]) + " = " + (Number(input[0]) + Number(input[1])));
+});
+/// 더 깔끔하게도 가능
+//rl.on("line", function (line) {  [a, b] = line.split(" ");
+//}).on("close", function () {
+//  console.log(a, "+", b, "=", Number(a) + Number(b));
+//});
+
