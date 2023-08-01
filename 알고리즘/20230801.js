@@ -36,3 +36,39 @@ function solution(common) {
         common.length > 1 ? common[common.length-1] * common[common.length-1] / common[common.length-2] : 0
     )
 }
+/// 다 비슷한데 조금 더 줄일 수 있는 부분이 있었을듯.
+
+/** 
+ * 여기부터는 입력받는 항목이 달라짐
+ * 상단에 이 내용이 공통으로 들어간다
+ * 
+ * const readline = require("readline");
+ * const rl = readline.createInterface({
+ *   input: process.stdin,
+ *   output: process.stdout,
+ * });
+ * let input = [];
+ */
+
+//문자열 출력하기
+rl.on("line", function (line) {  input = [line];
+}).on("close", function () {
+  str = input[0];
+  console.log(str);
+});
+/// 이건 뭘 했다기보다 console.log 배우라고 있는건가
+
+//a와 b 출력하기
+rl.on("line", function (line) {  input = line.split(" ");
+}).on("close", function () {
+  console.log("a = " + Number(input[0]) + "\nb = " + Number(input[1]));
+});
+
+//문자열 반복해서 출력하기
+rl.on('line', function (line) {  input = line.split(' ');
+}).on('close', function () {
+  str = input[0];
+  n = Number(input[1]);
+  console.log(str.repeat(n))
+});
+
