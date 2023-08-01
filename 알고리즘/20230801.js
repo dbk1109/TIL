@@ -101,3 +101,30 @@ rl.on('line', function (line) {  input = line.split(' ');
 //  console.log(a, "+", b, "=", Number(a) + Number(b));
 //});
 
+//문자열 붙여서 출력하기
+rl.on("line", function (line) {  input = line.split(" ");
+}).on("close", function () {
+  console.log(input[0] + input[1]);
+});
+/// input.join('')으로 여러개도 처리 가능한것도 가능
+
+//문자열 돌리기
+rl.on('line', function (line) {  input = [line];
+}).on('close',function(){
+  str = input[0].split('');
+  for (n of str) { console.log(n); }
+});
+
+//홀짝 구분하기
+rl.on("line", function (line) {  input = line.split(" ");
+}).on("close", function () {
+  n = Number(input[0]);
+  console.log(n % 2 === 0 ? n + " is even" : n + " is odd");
+});
+
+//문자열 겹쳐쓰기
+function solution(my_string, overwrite_string, s) {
+  //return my_string.replace(my_string.slice(s, s+overwrite_string.length), overwrite_string);
+  /// 문자를 리플레이스 하면 될줄 알았는데 같은 언어가 중복일 경우를 생각하지 못했음.
+  return my_string.slice(0, s) + overwrite_string + my_string.slice(s+overwrite_string.length);
+}
