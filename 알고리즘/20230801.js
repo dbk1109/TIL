@@ -128,3 +128,40 @@ function solution(my_string, overwrite_string, s) {
   /// 문자를 리플레이스 하면 될줄 알았는데 같은 언어가 중복일 경우를 생각하지 못했음.
   return my_string.slice(0, s) + overwrite_string + my_string.slice(s+overwrite_string.length);
 }
+
+//특별한 이차원 배열 1
+function solution(n) {
+  var answer = [];
+  for (let i = 0; i < n; i++) {
+    let arr = [];
+    for (let j = 0; j < n; j++) {
+      arr[j] = i == j ? 1 : 0;
+    }
+    answer[i] = arr;
+  }
+  return answer;
+}
+/// 미리 채우고 바꾼것도 있음
+//function solution(n) {
+//  const answer = Array.from(Array(n), () => Array(n).fill(0));
+//  for (let i = 0; i < n; i++) {
+//    answer[i][i] = 1;
+//  }
+//  return answer;
+//}
+
+//특별한 이차원 배열 2
+//function solution(arr) {
+//  return arr[0][1] == arr[1][0] ? 1 : 0;
+//}
+/// tilde(~) 연산자 : 비트연산자로 NOT의 기능
+function solution(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[i][j] != arr[j][i]) return 0;
+    }
+  }
+  return 1;
+}
+
+//
