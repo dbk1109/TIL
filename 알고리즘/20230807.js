@@ -81,3 +81,10 @@ function solution(num_list, n) {
 //  더 대단하다는건 아니지만 간단한걸로 구현이 가능하다면 그쪽으로 해보는게 더 좋다.
 //  return num_list.slice(0, n);
 
+//문자열을 정수로 변환하기
+function solution(n_str) {
+  return Number(n_str);
+}
+//  와 코드가 쿨하고 귀찮아보여 ㅋㅋㅋㅋ큐ㅠㅠㅠ
+//  const solution = Number
+
