@@ -88,3 +88,16 @@ function solution(n_str) {
 //  와 코드가 쿨하고 귀찮아보여 ㅋㅋㅋㅋ큐ㅠㅠㅠ
 //  const solution = Number
 
+//마지막 두 원소
+function solution(num_list) {
+  let LAST = num_list[num_list.length - 1];
+  let BEFORE = num_list[num_list.length - 2];
+  LAST > BEFORE ? num_list.push(LAST - BEFORE) : num_list.push(LAST * 2);
+  return num_list;
+}
+//  배열 꺼꾸로 하고 구조분해할당후 0번1번째 크기비교후 배열풀어서 조건 추가
+//  function solution(num_list) {
+//    const [a, b] = [...num_list].reverse();
+//    return [...num_list, a > b ? a - b : a * 2];
+//  }
+
