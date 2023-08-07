@@ -29,3 +29,8 @@ function solution(a, b) {
 }
 //  쉬울수록 더 간단한 방법이 많으니까 생각해보기
 //  return Math.max(Number(`${a}${b}`), Number(`${b}${a}`)) 
+
+//두 수의 연산값 비교하기
+function solution(a, b) {
+  return Math.max(`${a}${b}`, 2 * a * b);
+}
