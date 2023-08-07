@@ -20,3 +20,12 @@ function solution(arr) {
 function solution(my_string, k) {
   return my_string.repeat(k);
 }
+
+//더 크게 합치기
+function solution(a, b) {
+  let A = a + b.toString();
+  let B = b + a.toString();
+  return A >= B ? Number(A) : Number(B);
+}
+//  쉬울수록 더 간단한 방법이 많으니까 생각해보기
+//  return Math.max(Number(`${a}${b}`), Number(`${b}${a}`)) 
