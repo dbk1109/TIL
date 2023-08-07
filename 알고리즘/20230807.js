@@ -53,3 +53,8 @@ function solution(n) {
 //      return   n*(n+1)*(n+2)/6;
 //}
 
+//조건 문자열
+function solution(ineq, eq, n, m) {
+  eq === "!" ? (eq = "") : eq;
+  return eval(`${n}${ineq}${eq}${m}`) ? 1 : 0;
+}
