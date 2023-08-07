@@ -101,3 +101,7 @@ function solution(num_list) {
 //    return [...num_list, a > b ? a - b : a * 2];
 //  }
 
+//부분 문자열인지 확인하기
+function solution(my_string, target) {
+  return my_string.includes(target) ? 1 : 0;
+}
