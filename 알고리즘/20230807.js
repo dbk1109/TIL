@@ -69,3 +69,15 @@ function solution(flo) {
   return parseInt(flo);
 }
 //  const solution = flo => Math.floor(flo) 이런것도 있다
+
+//n 번째 원소까지
+function solution(num_list, n) {
+  var answer = [];
+  for (let i = 0; i < n; i++) {
+    answer.push(num_list[i]);
+  }
+  return answer;
+}
+//  더 대단하다는건 아니지만 간단한걸로 구현이 가능하다면 그쪽으로 해보는게 더 좋다.
+//  return num_list.slice(0, n);
+
