@@ -34,3 +34,22 @@ function solution(a, b) {
 function solution(a, b) {
   return Math.max(`${a}${b}`, 2 * a * b);
 }
+
+//홀짝에 따라 다른 값 반환하기
+function solution(n) {
+    let odd = 0;
+    let even = 0;
+    for (let i = n; i > 0; i--) {        
+        if (i%2 != 0) { odd += i;} 
+        else {even += i * i;}
+    }
+    return n % 2 != 0 ? odd : even;
+}
+//  n이 짝수일 때는 등차수열의 합 공식을 적용하였고, n이 홀수일 때는 자연수 거듭 제곱의 합을 구하는 공식을 적용
+//function solution(n) {
+//    if(n%2===1)
+//      return  (n+1)/2*((n + 1)/2) ;
+//    else
+//      return   n*(n+1)*(n+2)/6;
+//}
+
