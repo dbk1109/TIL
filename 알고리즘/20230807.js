@@ -58,3 +58,8 @@ function solution(ineq, eq, n, m) {
   eq === "!" ? (eq = "") : eq;
   return eval(`${n}${ineq}${eq}${m}`) ? 1 : 0;
 }
+
+//flag에 따라 다른 값 반환하기
+function solution(a, b, flag) {
+  return flag ? a + b : a - b;
+}
