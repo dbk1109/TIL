@@ -63,3 +63,9 @@ function solution(ineq, eq, n, m) {
 function solution(a, b, flag) {
   return flag ? a + b : a - b;
 }
+
+//정수 부분
+function solution(flo) {
+  return parseInt(flo);
+}
+//  const solution = flo => Math.floor(flo) 이런것도 있다
