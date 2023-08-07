@@ -15,3 +15,8 @@ function solution(str1, str2) {
 function solution(arr) {
   return arr.join("");
 }
+
+//문자열 곱하기
+function solution(my_string, k) {
+  return my_string.repeat(k);
+}
