@@ -47,3 +47,28 @@ function solution(n, control) {
   });
   return n;
 }
+
+//수 조작하기 2
+function solution(numLog) {
+  let answer = [];
+  for(let i = 0; i < numLog.length -1; i++) {
+    switch(numLog[i+1] - numLog[i]) {
+      case 1 : answer += "w"; break;
+      case -1 : answer += "s"; break;
+      case 10 : answer += "d"; break;
+      case -10 : answer += "a"; break;
+    }
+  }
+  return answer;
+}
+//  object로 간단한건 해도 괜찮을듯.
+//function solution(numLog) {
+//    const convert = {
+//        '1': 'w', '-1': 's', '10': 'd', '-10': 'a'
+//    };
+//    return numLog.slice(1).map((v, i) => {
+//        return convert[v - numLog[i]]
+//    }).join('')
+//}
+
+//
