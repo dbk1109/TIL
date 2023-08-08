@@ -36,3 +36,14 @@ function solution(a, b, c) {
 function solution(nl) {
     return nl.reduce((a, c) => a * c) < Math.pow(nl.reduce((a, c) => a + c), 2) ? 1 : 0;
 }
+
+//수 조작하기 1
+function solution(n, control) {
+  control.split("").map((x) => {
+    if (x === "w") n++;
+    if (x === "s") n--;
+    if (x === "d") n += 10;
+    if (x === "a") n -= 10;
+  });
+  return n;
+}
