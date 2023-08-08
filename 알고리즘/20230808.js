@@ -32,3 +32,7 @@ function solution(a, b, c) {
 }
 //  재사용에 대한 가능성을 열어두려면 switch로 case 나눠보는것도 도움될듯
 
+//원소들의 곱과 합
+function solution(nl) {
+    return nl.reduce((a, c) => a * c) < Math.pow(nl.reduce((a, c) => a + c), 2) ? 1 : 0;
+}
