@@ -21,3 +21,14 @@ function solution(a, d, included) {
 //      return flag ? acc + a + d * i : acc;
 //    }, 0);
 
+//주사위 게임 2
+function solution(a, b, c) {
+  let answer = 0;
+  a == b && b == c ? answer = 27 * Math.pow(a, 6)
+    : a == b || a == c || b == c
+    ? (answer = (a + b + c) * (a * a + b * b + c * c))
+    : (answer = a + b + c);
+  return answer;
+}
+//  재사용에 대한 가능성을 열어두려면 switch로 case 나눠보는것도 도움될듯
+
