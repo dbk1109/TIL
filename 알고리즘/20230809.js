@@ -22,9 +22,3 @@ function solution(arr, queries) {
 //  한줄로는 이렇다. sort해서 처음껄 넣던지 아님 -1을 해라....
 //  return queries.map(([s, e, k]) => arr.slice(s, e + 1).filter((n) => n > k).sort((a, b) => a - b)[0] || -1);
 
-//수열과 구간 쿼리 3
-
-  queries.forEach(([i, j]) => {
-    arr[i]
-    answer.push(min);
-  });
