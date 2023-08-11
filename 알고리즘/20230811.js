@@ -38,15 +38,18 @@ function solution(n) {
 //}
 
 // 배열 만들기 2
-function solution(l, r) {
-  const answer = [];
-  for (let i = l; i <= r; i++) {
-    if (i.toString().replace(/[05]/g, "").length === 0) {
-      answer.push(i);
-    }
-  }
-  return answer.length === 0 ? [-1] : answer;
-}
+//
+//////  솔직히 다시하자
+//
+//function solution(l, r) {
+//  const answer = [];
+//  for (let i = l; i <= r; i++) {
+//    if (i.toString().replace(/[05]/g, "").length === 0) {
+//      answer.push(i);
+//    }
+//  }
+//  return answer.length === 0 ? [-1] : answer;
+//}
 //  하!
 //function solution(l, r) {
 //  const result = Array.from({ length: r - l + 1 }, (_, i) => i + l).filter(
@@ -54,3 +57,13 @@ function solution(l, r) {
 //  );
 //  return result.length ? result : [-1];
 //}
+
+//배열 만들기 4
+function solution(arr) {
+    var stk = [];
+    let i = 0;
+    while (i < arr.length) { 
+        stk.length === 0 || stk[stk.length -1] < arr[i] ? (stk.push(arr[i]), i++) : stk.pop()
+    }
+    return stk;
+}
