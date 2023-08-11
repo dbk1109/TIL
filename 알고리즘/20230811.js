@@ -7,3 +7,15 @@ function solution(arr, queries) {
     })
     return arr;
 }
+
+//카운트 업
+function solution(start, end) {
+  var answer = [];
+  for (let i = start; i <= end; i++) {
+    answer.push(i);
+  }
+  return answer;
+}
+//  array가 아니면 만들면 될 일!
+//  return Array(end-start+1).fill(start).map((x,idx) => x+idx);
+
