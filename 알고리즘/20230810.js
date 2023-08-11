@@ -7,6 +7,6 @@ function solution(arr, queries) {
   });
   return arr;
 } 
-//  이걸 찾았었는데
+//  이걸 찾았었는데...
 //[arr[i],arr[j] = [arr[j],arr[i]];
 
