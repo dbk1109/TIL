@@ -36,3 +36,21 @@ function solution(n) {
 //  if (n % 2 === 0) return solution(n / 2, arr);
 //  return solution(3 * n + 1, arr);
 //}
+
+// 배열 만들기 2
+function solution(l, r) {
+  const answer = [];
+  for (let i = l; i <= r; i++) {
+    if (i.toString().replace(/[05]/g, "").length === 0) {
+      answer.push(i);
+    }
+  }
+  return answer.length === 0 ? [-1] : answer;
+}
+//  하!
+//function solution(l, r) {
+//  const result = Array.from({ length: r - l + 1 }, (_, i) => i + l).filter(
+//    (n) => !/[^05]/.test(n)
+//  );
+//  return result.length ? result : [-1];
+//}
