@@ -22,3 +22,17 @@ function solution(my_string, queries) {
 //}
 
 //9로 나눈 나머지
+function solution(number) {
+  return number.split("").reduce((acc, cur) => Number(acc) + Number(cur)) % 9;
+}
+//BigInt 는 Number 원시 값이 안정적으로 나타낼 수 있는 최대치인 2^53 - 1보다 큰 정수를 표현할 수 있는 내장 객체입니다.
+//1const solution=n=>BigInt(n)%9n
+
+//글자 이어 붙여 문자열 만들기
+function solution(my_string, index_list) {
+  var answer = [];
+  for (i of index_list) {
+    answer.push(my_string[i]);
+  }
+  return answer.join("");
+}
