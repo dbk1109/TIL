@@ -7,8 +7,7 @@ function solution(x1, x2, x3, x4) {
 //문자열 여러 번 뒤집기
 function solution(my_string, queries) {
   for ([s, e] of queries) {
-      my_string = my_string.split('');
-      my_string = my_string.slice(0,s).join('') + my_string.slice(s,e+1).reverse().join('') +  my_string.slice(e+1).join('')
+      my_string = [...my_string].slice(0,s).join('') + [...my_string].slice(s,e+1).reverse().join('') +  [...my_string].slice(e+1).join('')
   }
   return my_string;
 }
@@ -21,3 +20,5 @@ function solution(my_string, queries) {
 //  });
 //  return str.join("");
 //}
+
+//9로 나눈 나머지
