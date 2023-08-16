@@ -36,3 +36,5 @@ function solution(my_string, index_list) {
   }
   return answer.join("");
 }
+//  섹시하게 하자
+//  return index_list.map((i) => my_string[i]).join("");
