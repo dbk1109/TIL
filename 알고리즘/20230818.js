@@ -46,3 +46,8 @@ function solution(intStrs, k, s, l) {
 function solution(my_string, alp) {
   return my_string.replaceAll(alp, alp.toUpperCase());
 }
+
+//첫 번째로 나오는 음수
+function solution(num_list) {
+  return num_list.indexOf(num_list.filter((x, idx) => x < 0)[0]);
+}
