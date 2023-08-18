@@ -27,3 +27,12 @@ function solution(my_string) {
 function solution(my_string, n) {
   return my_string.slice(-n);
 }
+
+//부분 문자열 이어 붙여 문자열 만들기
+function solution(my_strings, parts) {
+  var answer = "";
+  for (let i = 0; i < my_strings.length; i++) {
+    answer += my_strings[i].slice(parts[i][0], parts[i][1] + 1);
+  }
+  return answer;
+}
