@@ -51,3 +51,15 @@ function solution(my_string, alp) {
 function solution(num_list) {
   return num_list.indexOf(num_list.filter((x, idx) => x < 0)[0]);
 }
+
+//n개 간격의 원소들
+function solution(num_list, n) {
+  var answer = [];
+  for (let i = 0; i < num_list.length; i += n) {
+    answer.push(num_list[i]);
+  }
+  return answer;
+}
+//num_list.filter((_, i) => !(i % n))
+//filter 안의 인자 중 _ 는 사용하지 않는 변수라는 의미를 표현합니다.
+// 나누기로는 접근해보지 않았는데 신박했다.
