@@ -93,3 +93,9 @@ function solution(arr) {
   let array = arr.slice(arr.indexOf(2), arr.lastIndexOf(2) + 1);
   return array.length > 0 ? array : [-1];
 }
+
+//배열 조각하기
+function solution(arr, query) {
+    query.forEach( (_, i) => i % 2 === 0 ? arr = arr.slice(0, query[i]+1) : arr = arr.slice(query[i]) ) 
+    return arr;
+}
