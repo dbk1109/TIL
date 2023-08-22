@@ -99,3 +99,8 @@ function solution(arr, query) {
     query.forEach( (_, i) => i % 2 === 0 ? arr = arr.slice(0, query[i]+1) : arr = arr.slice(query[i]) ) 
     return arr;
 }
+
+//n 번째 원소부터
+function solution(num_list, n) {
+    return num_list.slice(n-1);
+}
