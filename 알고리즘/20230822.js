@@ -22,3 +22,25 @@ function solution(my_string, m, c) {
 function solution(q, r, code) {
   return [...code].filter((_, i) => i % q === r).join("");
 }
+
+//문자 개수 세기
+function solution(my_string) {
+    let answer = Array(52).fill(0);
+    const alpA = Array.from({ length: 26 }, (v, i) => String.fromCharCode(i + 65));
+    alpA.push(...Array.from({ length: 26 }, (v, i) => String.fromCharCode(i + 97)));
+    let str = [...my_string];
+    for(let i = 0; i < str.length; i++) {
+        alpA.includes(str[i]) ? (answer[alpA.indexOf(str[i])] += 1) : answer;
+    }
+    return answer;
+}
+//  안쓰겠다는 욕심을 버리면 쉬워진다
+//function solution(my_string) {
+//  let answer = Array(52).fill(0);
+//  const alpA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+//  for (let i = 0; i < my_string.length; i++) {
+//    if (alpA.includes(my_string[i])) answer[alpA.indexOf(my_string[i])] += 1;
+//  }
+//  return answer;
+//}
+
