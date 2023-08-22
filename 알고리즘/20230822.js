@@ -34,7 +34,7 @@ function solution(my_string) {
     }
     return answer;
 }
-//  안쓰겠다는 욕심을 버리면 쉬워진다
+//  손으로 안쓰겠다는 욕심을 버리면 쉬워진다
 //function solution(my_string) {
 //  let answer = Array(52).fill(0);
 //  const alpA = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -44,3 +44,12 @@ function solution(my_string) {
 //  return answer;
 //}
 
+//배열 만들기 1
+function solution(n, k) {
+    var answer = [];
+    let x = 1;
+    while(x <= n) {
+        if(x % k === 0) answer.push(x); x++;
+    }
+    return answer;
+}
