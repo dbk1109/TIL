@@ -11,3 +11,8 @@ function solution(my_string, is_prefix) {
   }
   return answer.includes(is_prefix) ? 1 : 0;
 }
+
+//문자열 뒤집기
+function solution(my_string, s, e) {
+    return my_string.slice(0, s) + my_string.slice(s, e+1).split('').reverse().join('') + my_string.slice(e+1)
+}
