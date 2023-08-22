@@ -53,3 +53,12 @@ function solution(n, k) {
     }
     return answer;
 }
+
+//글자 지우기
+function solution(my_string, indices) {
+  let str = [...my_string];
+  for (i of indices) {
+    str.splice(i, 1, "");
+  }
+  return str.join("");
+}
