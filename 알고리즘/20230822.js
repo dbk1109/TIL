@@ -62,3 +62,10 @@ function solution(my_string, indices) {
   }
   return str.join("");
 }
+
+//가까운 1 찾기
+function solution(arr, idx) {
+  return arr.slice(idx).indexOf(1) != -1 ? arr.slice(idx).indexOf(1) + idx : -1;
+}
+//  와 세상에 findIndex 생각도 못했다
+//  return arr.findIndex((v, i) => idx <= i && v === 1);
