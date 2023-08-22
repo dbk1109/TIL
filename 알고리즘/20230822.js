@@ -87,3 +87,9 @@ function solution(arr, intervals) {
     return arr.slice(f[0], f[1]+1).concat(arr.slice(s[0], s[1]+1));
 }
 //  [...arr.slice(a, b+1), ...arr.slice(c, d+1)]; 이렇게 합쳐도된다!
+
+//2의 영역
+function solution(arr) {
+  let array = arr.slice(arr.indexOf(2), arr.lastIndexOf(2) + 1);
+  return array.length > 0 ? array : [-1];
+}
