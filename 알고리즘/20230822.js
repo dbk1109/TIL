@@ -69,3 +69,14 @@ function solution(arr, idx) {
 }
 //  와 세상에 findIndex 생각도 못했다
 //  return arr.findIndex((v, i) => idx <= i && v === 1);
+
+//리스트 자르기
+function solution(n, slicer, num_list) {
+    let [a,b,c] = slicer;
+    switch(n) {
+        case 1 : return num_list.slice(0, b+1);
+        case 2 : return num_list.slice(a);
+        case 3 : return num_list.slice(a, b+1);
+        case 4 : return num_list.slice(a, b+1).filter((_, i) => !(i % c));
+    }
+}
