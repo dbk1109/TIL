@@ -80,3 +80,9 @@ function solution(n, slicer, num_list) {
         case 4 : return num_list.slice(a, b+1).filter((_, i) => !(i % c));
     }
 }
+
+//배열 만들기 3
+function solution(arr, intervals) {
+    let [f, s] = intervals;
+    return arr.slice(f[0], f[1]+1).concat(arr.slice(s[0], s[1]+1));
+}
