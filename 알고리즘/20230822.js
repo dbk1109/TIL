@@ -86,3 +86,4 @@ function solution(arr, intervals) {
     let [f, s] = intervals;
     return arr.slice(f[0], f[1]+1).concat(arr.slice(s[0], s[1]+1));
 }
+//  [...arr.slice(a, b+1), ...arr.slice(c, d+1)]; 이렇게 합쳐도된다!
