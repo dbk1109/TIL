@@ -17,3 +17,8 @@ function solution(my_string, m, c) {
 //  }, '')
 //  [...my_string].filter((_, i) => i % m === c - 1).join("");
 //  const solution=(s,m,c)=>s.match(new RegExp(`.{${m}}`,'g')).map(v=>v[c-1]).join('')
+
+//qr code
+function solution(q, r, code) {
+  return [...code].filter((_, i) => i % q === r).join("");
+}
