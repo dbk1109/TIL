@@ -125,3 +125,9 @@ function solution(num_list) {
 function solution(num_str) {
   return num_str.split("").reduce((s, v) => Number(s) + Number(v));
 }
+
+//전국 대회 선발 고사
+function solution(rank, attendance) {
+    let [a, b, c] = rank.filter((_, i) => attendance[i]).sort((a,b) => a-b).slice(0, 3);
+    return (10000 * rank.indexOf(a)) + (100  * rank.indexOf(b)) + rank.indexOf(c);
+}
