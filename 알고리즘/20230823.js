@@ -30,3 +30,6 @@ function solution(names) {
   return names.filter((_, i) => i % 5 === 0);
 }
 //const solution = (names) => names.filter((_, i) => !(i % 5)); 이렇게도 됨
+
+//할 일 목록
+const solution = (todo_list, finished) => todo_list.filter((_, i) => !finished[i]);
