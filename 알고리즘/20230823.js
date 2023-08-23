@@ -58,3 +58,5 @@ function solution(arr) {
 }
 //  every()의 사용법을 익혀두면 좋을것같다.
 
+//조건에 맞게 수열 변환하기 3
+const solution = (arr, k) => arr.map((x) => (k % 2 === 0 ? x + k : x * k));
