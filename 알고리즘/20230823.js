@@ -16,7 +16,7 @@ function solution(num_list) {
     let EVEN = CHECKER[1].reduce((sum, val) => sum + val)
     return ODD >= EVEN ? ODD : EVEN;
 }
-// 훨씬 간단한걸..?
+//  훨씬 간단한걸..?
 //function solution(num_list) {
 //  let [even, odd] = [0, 0];
 //  num_list.map((v, idx) => {
@@ -24,3 +24,9 @@ function solution(num_list) {
 //  });
 //  return odd > even ? odd : even;
 //}
+
+//5명씩
+function solution(names) {
+  return names.filter((_, i) => i % 5 === 0);
+}
+//const solution = (names) => names.filter((_, i) => !(i % 5)); 이렇게도 됨
