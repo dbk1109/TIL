@@ -77,3 +77,6 @@ function solution(num_list) {
 }
 //  return num_list.map(v => v.toString(2).length - 1).reduce((a, c) => a + c);
 //  2진수로 넣으면 자리수 = 내려가는수인것을 바로 알아차리는게 엄청 신박했다.세상에.
+
+//소문자로 바꾸기
+const solution = (myString) => myString.toLowerCase();
