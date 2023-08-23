@@ -95,3 +95,6 @@ function solution(strArr) {
   return answer;
 }
 //  !!! 아 filter 함수;;;
+
+//공백으로 구분하기 2
+const solution = (my_string) => my_string.split(" ").filter((x) => x != "");
