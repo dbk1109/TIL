@@ -87,3 +87,11 @@ const solution = (strArr) => strArr.map((x, i) => i % 2 === 0 ? x.toLowerCase() 
 //A 강조하기
 const solution = (myString) => myString.split('').map(x => x === "a" || x === "A" ? x.toUpperCase() : x.toLowerCase()).join('');
 //  와우 const solution = (s) => s.toLowerCase().replaceAll("a", "A");
+
+//ad 제거하기
+function solution(strArr) {
+  let answer = [];
+  strArr.map((x) => (!x.includes("ad") ? answer.push(x) : x));
+  return answer;
+}
+//  !!! 아 filter 함수;;;
