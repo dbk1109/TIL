@@ -98,3 +98,6 @@ function solution(strArr) {
 
 //공백으로 구분하기 2
 const solution = (my_string) => my_string.split(" ").filter((x) => x != "");
+
+//특정 문자열로 끝나는 가장 긴 부분 문자열 찾기
+const solution = (myString, pat) => myString.slice(0, myString.lastIndexOf(pat))+pat;
