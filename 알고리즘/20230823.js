@@ -34,6 +34,11 @@ function solution(names) {
 //할 일 목록
 const solution = (todo_list, finished) => todo_list.filter((_, i) => !finished[i]);
 
+//조건에 맞게 수열 변환하기 1
+function solution(arr) {
+    return arr.map(x => x % 2 === 0 ? (x >= 50 ? x / 2 : x) : (x < 50 ? x * 2 : x));
+}
+
 //조건에 맞게 수열 변환하기 2
 function solution(arr) {
     var newArr = [];
