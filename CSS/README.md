@@ -6,6 +6,7 @@
 ## SCSS Masterclass
 
 (S)CSS Layout Masterclass: Flexbox & Grid
+[참고](https://github.com/nomadcoders/scss-masterclass)
 
 ### Flexbox:
 
