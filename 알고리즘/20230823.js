@@ -83,3 +83,7 @@ const solution = (myString) => myString.toLowerCase();
 
 //배열에서 문자열 대소문자 변환하기
 const solution = (strArr) => strArr.map((x, i) => i % 2 === 0 ? x.toLowerCase() : x.toUpperCase());
+
+//A 강조하기
+const solution = (myString) => myString.split('').map(x => x === "a" || x === "A" ? x.toUpperCase() : x.toLowerCase()).join('');
+//  와우 const solution = (s) => s.toLowerCase().replaceAll("a", "A");
