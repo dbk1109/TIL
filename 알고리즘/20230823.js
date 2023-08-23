@@ -63,3 +63,17 @@ const solution = (arr, k) => arr.map((x) => (k % 2 === 0 ? x + k : x * k));
 
 //원하는 문자열 찾기
 const solution = (myString, pat) => myString.toUpperCase().includes(pat.toUpperCase()) ? 1 : 0;
+
+//1로 만들기
+function solution(num_list) {
+    let counter = 0;
+    for(let i = 0; i < num_list.length; i++) {
+        while(num_list[i] != 1) {
+            num_list[i] = num_list[i] % 2 === 0 ? num_list[i] / 2 : (num_list[i]-1) / 2;
+            counter++;
+        }
+    }
+    return counter;
+}
+//  return num_list.map(v => v.toString(2).length - 1).reduce((a, c) => a + c);
+//  2진수로 넣으면 자리수 = 내려가는수인것을 바로 알아차리는게 엄청 신박했다.세상에.
