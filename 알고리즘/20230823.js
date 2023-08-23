@@ -120,3 +120,8 @@ function solution(num_list) {
 function solution(num_list) {
   return num_list.sort((a, b) => a - b).slice(0, 5);
 }
+
+//문자열 정수의 합
+function solution(num_str) {
+  return num_str.split("").reduce((s, v) => Number(s) + Number(v));
+}
