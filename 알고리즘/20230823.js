@@ -80,3 +80,6 @@ function solution(num_list) {
 
 //소문자로 바꾸기
 const solution = (myString) => myString.toLowerCase();
+
+//배열에서 문자열 대소문자 변환하기
+const solution = (strArr) => strArr.map((x, i) => i % 2 === 0 ? x.toLowerCase() : x.toUpperCase());
