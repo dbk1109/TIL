@@ -33,3 +33,23 @@ function solution(names) {
 
 //할 일 목록
 const solution = (todo_list, finished) => todo_list.filter((_, i) => !finished[i]);
+
+//조건에 맞게 수열 변환하기 2
+function solution(arr) {
+    var newArr = [];
+    let counter = 0;
+    while ( !arr.every((value, idx) => value === newArr[idx])) {
+        newArr = [...arr];
+        for(let i = 0; i < arr.length; i++) {
+            if (arr[i] >= 50) {
+                if (arr[i] % 2 === 0) arr[i] = arr[i] / 2
+            } else {
+                if (arr[i] % 2 != 0) arr[i] = (arr[i] * 2) + 1
+            }
+        }
+        counter++;
+    }
+    return counter-1;
+}
+//  every()의 사용법을 익혀두면 좋을것같다.
+
