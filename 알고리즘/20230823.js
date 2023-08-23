@@ -101,3 +101,12 @@ const solution = (my_string) => my_string.split(" ").filter((x) => x != "");
 
 //특정 문자열로 끝나는 가장 긴 부분 문자열 찾기
 const solution = (myString, pat) => myString.slice(0, myString.lastIndexOf(pat))+pat;
+
+//문자열이 몇 번 등장하는지 세기
+function solution(ms, pat) {
+  let counter = 0;
+  for (let i = ms.indexOf(pat); i < ms.length - pat.length; i++) {
+    if (ms.slice(i, i + pat.length) == pat) counter++;
+  }
+  return counter;
+}
