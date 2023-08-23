@@ -60,3 +60,6 @@ function solution(arr) {
 
 //조건에 맞게 수열 변환하기 3
 const solution = (arr, k) => arr.map((x) => (k % 2 === 0 ? x + k : x * k));
+
+//원하는 문자열 찾기
+const solution = (myString, pat) => myString.toUpperCase().includes(pat.toUpperCase()) ? 1 : 0;
