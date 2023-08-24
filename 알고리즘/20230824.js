@@ -108,3 +108,8 @@ function solution(str1, str2) {
 function solution(num_list, n) {
   return num_list.includes(n) ? 1 : 0;
 }
+
+//주사위 게임 1
+function solution(a, b) {
+    return (a+b) % 2 != 0 ? 2 * (a+b) : a % 2 != 0 ? (a*a)+(b*b) : Math.abs(a - b);
+}
