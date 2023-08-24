@@ -65,3 +65,13 @@ function solution(arr) {
 //  와 미친 리듀스
 //  return arr.reduce((a, c) => a.concat(Array(c).fill(c)), [])
 
+//빈 배열에 추가, 삭제하기
+function solution(arr, flag) {
+    var X = [];
+    for(let i = 0; i < arr.length; i++) {
+        flag[i] ? X.push(...new Array(arr[i]*2).fill(arr[i])) : X.splice(X.length-arr[i], arr[i])
+    }
+    return X;
+}
+//  또 리듀스야....
+//return arr.reduce(((e,l,a)=>flag[a]?[...e,...new Array(2*l).fill(l)]:e.slice(0,-l)),[]);
