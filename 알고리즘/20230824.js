@@ -23,3 +23,15 @@ function solution(binomial) {
 //function solution(binomial) {
 //    return Function(`return ${binomial}`)()
 //}
+
+//문자열 바꿔서 찾기
+function solution(myString, pat) {
+  myString = myString.split("");
+  for (let i = 0; i < myString.length; i++) {
+    myString[i] === "A" ? (myString[i] = "B") : (myString[i] = "A");
+  }
+  return myString.join("").includes(pat) ? 1 : 0;
+}
+//  아 맵
+//[...myString].map(v => v === 'A' ? 'B' : 'A').join('').includes(pat) ? 1 : 0
+
