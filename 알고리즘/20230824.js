@@ -47,7 +47,7 @@ function solution(myStr) {
   return answer.length > 0 ? myStr.split("_").filter(x => x != '') : ["EMPTY"];
 }
 //  하 이렇게 짧다고?
-//myStr.match(정규식) || ["EMPTY"];
+//return myStr.match(정규식) || ["EMPTY"];
 //정규식 가능 목록 : /[^a-c]+/g, /[a|b|c]/, /a|b|c/g, /[abc]/g;
 
 //배열의 원소만큼 추가하기
@@ -86,3 +86,16 @@ function solution(arr) {
     }
     return stk.length != 0 ? stk : [-1];
 }
+
+//무작위로 K개의 수 뽑기
+function solution(arr, k) {
+  let answer = arr.filter((x, i) => arr.indexOf(x) === i).slice(0, k);
+  while( answer.length < k) {answer.push(-1)}
+  return answer;
+}
+//  그래 Set 쓰면되잖아 이미 해보고 안되서 포기하냐
+//function solution(arr, k) {
+//  const set = new Set(arr);
+//  return set.size < k ? [...set, ...Array(k - set.size).fill(-1)] : [...set].slice(0, k);
+//}
+
