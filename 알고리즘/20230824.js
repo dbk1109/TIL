@@ -140,3 +140,4 @@ function solution(arr1, arr2) {
 function solution(myString) {
   return [...myString].map((x) => (x.match(/[a-l]+/g) ? "l" : x)).join("");
 }
+//  그냥 리플레이스.... myString.replace(/[a-k]/g,'l')
