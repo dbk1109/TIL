@@ -49,3 +49,19 @@ function solution(myStr) {
 //  하 이렇게 짧다고?
 //myStr.match(정규식) || ["EMPTY"];
 //정규식 가능 목록 : /[^a-c]+/g, /[a|b|c]/, /a|b|c/g, /[abc]/g;
+
+//배열의 원소만큼 추가하기
+function solution(arr) {
+  var x = [];
+  for (i in arr) {
+    let counter = 0;
+    while (counter < arr[i]) {
+      x.push(arr[i]);
+      counter++;
+    }
+  }
+  return x;
+}
+//  와 미친 리듀스
+//  return arr.reduce((a, c) => a.concat(Array(c).fill(c)), [])
+
