@@ -127,3 +127,11 @@ function solution(arr, n) {
 }
 //  ^ : Bitwise XOR 연산자: ^는 비트별 XOR(배타적 논리합) 연산자로 사용됩니다. 두 비트가 다를 때 결과는 1이 되고, 같을 때는 0이 됩니다.
 // arr.map((v,i) => (arr.length % 2 ^ i % 2) ? v+n : v )
+
+//배열 비교하기
+function solution(arr1, arr2) {
+    let [plus1, plus2] = [arr1.reduce((a,v) => a+v), arr2.reduce((a,v) => a+v)]
+    return arr1.length^arr2.length ? arr1.length < arr2.length ? -1 : 1 : (
+        plus1 < plus2 ? -1 : plus1 === plus2 ? 0 : 1
+    );
+}
