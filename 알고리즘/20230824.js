@@ -135,3 +135,8 @@ function solution(arr1, arr2) {
         plus1 < plus2 ? -1 : plus1 === plus2 ? 0 : 1
     );
 }
+
+//l로 만들기
+function solution(myString) {
+  return [...myString].map((x) => (x.match(/[a-l]+/g) ? "l" : x)).join("");
+}
