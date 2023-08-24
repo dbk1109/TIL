@@ -12,12 +12,12 @@ function solution(myString) {
 
 //간단한 식 계산하기
 function solution(binomial) {
-    let [a, op, b] = binomial.split(" ").map((x, i) => i != 1 ? Number(x) : x);
-    switch(op) {
-        case "+" : return a + b;
-        case "-" : return a - b;
-        case "*" : return a * b;
-    }
+  let [a, op, b] = binomial.split(" ").map((x, i) => i != 1 ? Number(x) : x);
+  switch(op) {
+      case "+" : return a + b;
+      case "-" : return a - b;
+      case "*" : return a * b;
+  }
 }
 //  아니이게뭐야
 //function solution(binomial) {
@@ -39,3 +39,13 @@ function solution(myString, pat) {
 function solution(rny_string) {
   return rny_string.replaceAll("m", "rn");
 }
+
+//세 개의 구분자
+function solution(myStr) {
+  ['a', 'b', 'c'].forEach( el => myStr = myStr.replaceAll(el, '_') )
+  let answer = myStr.split("_").filter(x => x != '')
+  return answer.length > 0 ? myStr.split("_").filter(x => x != '') : ["EMPTY"];
+}
+//  하 이렇게 짧다고?
+//myStr.match(정규식) || ["EMPTY"];
+//정규식 가능 목록 : /[^a-c]+/g, /[a|b|c]/, /a|b|c/g, /[abc]/g;
