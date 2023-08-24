@@ -111,5 +111,10 @@ function solution(num_list, n) {
 
 //주사위 게임 1
 function solution(a, b) {
-    return (a+b) % 2 != 0 ? 2 * (a+b) : a % 2 != 0 ? (a*a)+(b*b) : Math.abs(a - b);
+  return (a+b) % 2 != 0 ? 2 * (a+b) : a % 2 != 0 ? (a*a)+(b*b) : Math.abs(a - b);
+}
+
+//꼬리 문자열
+function solution(str_list, ex) {
+  return str_list.filter((x) => !x.includes(ex)).join("");
 }
