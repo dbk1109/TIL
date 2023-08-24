@@ -103,3 +103,8 @@ function solution(arr, k) {
 function solution(str1, str2) {
   return str2.includes(str1) ? 1 : 0;
 }
+
+//정수 찾기
+function solution(num_list, n) {
+  return num_list.includes(n) ? 1 : 0;
+}
