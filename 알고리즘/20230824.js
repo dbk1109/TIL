@@ -149,3 +149,16 @@ function solution(arr, delete_list) {
 }
 //  와 반대로 넣는거 생각도 못함
 //  return arr.filter((el) => !dels.includes(el));
+
+//0 떼기
+function solution(n_str) {
+  n_str = n_str.split("");
+  while (n_str[0] === "0") {
+    n_str.shift();
+  }
+  return n_str.join("");
+}
+//  와 미쳤다
+//  String(Number(str))
+//  정규식
+//  return n_str.replace(/^0+/, "");
