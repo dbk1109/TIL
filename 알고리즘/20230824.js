@@ -118,3 +118,12 @@ function solution(a, b) {
 function solution(str_list, ex) {
   return str_list.filter((x) => !x.includes(ex)).join("");
 }
+
+//배열의 길이에 따라 다른 연산하기
+function solution(arr, n) {
+  return arr.length % 2 != 0
+    ? arr.map((x, i) => (i % 2 === 0 ? x + n : x))
+    : arr.map((x, i) => (i % 2 != 0 ? x + n : x));
+}
+//  ^ : Bitwise XOR 연산자: ^는 비트별 XOR(배타적 논리합) 연산자로 사용됩니다. 두 비트가 다를 때 결과는 1이 되고, 같을 때는 0이 됩니다.
+// arr.map((v,i) => (arr.length % 2 ^ i % 2) ? v+n : v )
