@@ -99,3 +99,7 @@ function solution(arr, k) {
 //  return set.size < k ? [...set, ...Array(k - set.size).fill(-1)] : [...set].slice(0, k);
 //}
 
+//부분 문자열
+function solution(str1, str2) {
+  return str2.includes(str1) ? 1 : 0;
+}
