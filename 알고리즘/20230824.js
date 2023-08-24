@@ -35,3 +35,7 @@ function solution(myString, pat) {
 //  아 맵
 //[...myString].map(v => v === 'A' ? 'B' : 'A').join('').includes(pat) ? 1 : 0
 
+//rny_string
+function solution(rny_string) {
+  return rny_string.replaceAll("m", "rn");
+}
