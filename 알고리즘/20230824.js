@@ -141,3 +141,11 @@ function solution(myString) {
   return [...myString].map((x) => (x.match(/[a-l]+/g) ? "l" : x)).join("");
 }
 //  그냥 리플레이스.... myString.replace(/[a-k]/g,'l')
+
+//배열의 원소 삭제하기
+function solution(arr, delete_list) {
+    delete_list.forEach(l => arr.includes(l) ? arr.splice(arr.indexOf(l), 1) : l)
+    return arr;
+}
+//  와 반대로 넣는거 생각도 못함
+//  return arr.filter((el) => !dels.includes(el));
