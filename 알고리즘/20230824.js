@@ -75,3 +75,14 @@ function solution(arr, flag) {
 }
 //  또 리듀스야....
 //return arr.reduce(((e,l,a)=>flag[a]?[...e,...new Array(2*l).fill(l)]:e.slice(0,-l)),[]);
+
+//배열 만들기 6
+function solution(arr) {
+    var stk = [];
+    for(let i = 0; i< arr.length; i++) {
+        stk.length === 0 ? stk.push(arr[i]) : (
+            stk[stk.length-1] === arr[i] ? stk.pop() : stk.push(arr[i])
+        )
+    }
+    return stk.length != 0 ? stk : [-1];
+}
