@@ -23,3 +23,14 @@ function solution(strArr) {
 }
 //  이렇게 쓰는거 배워두면 좋을듯
 //strArr.forEach(x => answer[x.length] = (answer[x.length] || 0) + 1);
+
+//이차원 배열 대각선 순회하기
+function solution(board, k) {
+  var answer = 0;
+  for (i in board) {
+    for (j in board[i]) {
+      if (Number(i) + Number(j) <= k) answer += board[i][j];
+    }
+  }
+  return answer;
+}
