@@ -14,3 +14,12 @@ function solution(arr) {
 }
 //  이렇게 간단하다니.. 
 //return [...arr, ...Array(2 ** Math.ceil(Math.log2(arr.length)) - arr.length).fill(0)];
+
+//문자열 묶기
+function solution(strArr) {
+  let answer = {};
+  strArr.forEach(x => answer[x.length] == null ? answer[x.length] = 1 : answer[x.length] += 1)
+  return Object.values(answer).sort((a,b) => b-a)[0];
+}
+//  이렇게 쓰는거 배워두면 좋을듯
+//strArr.forEach(x => answer[x.length] = (answer[x.length] || 0) + 1);
