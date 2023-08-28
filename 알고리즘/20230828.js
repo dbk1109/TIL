@@ -42,3 +42,18 @@ function solution(board, k) {
 function solution(date1, date2) {
   return new Date(date1) < new Date(date2) ? 1 : 0;
 }
+
+//커피 심부름
+function solution(order) {
+  var total = 0;
+  let menu = [
+    ["americano", "iceamericano", "americanoice", "anything", "hotamericano", "americanohot"],
+    ["cafelatte", "icecafelatte", "cafelatteice", "hotcafelatte", "cafelattehot"]
+  ]
+  order.forEach(el => menu[0].includes(el) ? total += 4500 : total += 5000 )
+  return total;
+}
+//  리듀스를 다양하게 사용해보자.
+//function solution(order) {
+//  return order.reduce((acc, cur) => acc + (cur.includes("latte") ? 5000 : 4500), 0);
+//}
