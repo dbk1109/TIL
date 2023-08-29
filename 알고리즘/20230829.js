@@ -17,3 +17,16 @@ function solution(arr) {
   }
   return arr;
 }
+
+//그림 확대
+function solution(picture, k) {
+    let answer = [];
+    picture.map(x => {
+        let counter = 0;
+        while(counter < k) {
+            answer.push(x.split('').map(y => y.repeat(k)).join(''));
+            counter++;
+        }
+    })
+    return answer;
+}
