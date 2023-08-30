@@ -116,3 +116,12 @@ function solution(a, b) {
 //  const [A, B] = [a, b].sort((x, y) => x - y);
 //  return ((B - A + 1) * (A + B)) / 2;
 //}
+
+//콜라츠 추측
+function solution(num, count = 0) {
+  while (num != 1) {
+    num % 2 === 0 ? (num = num / 2) : (num = num * 3 + 1);
+    count++;
+  }
+  return count > 500 ? -1 : count;
+}
