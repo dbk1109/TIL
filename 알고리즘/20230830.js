@@ -90,3 +90,8 @@ const solution = (s) =>
 
 //정수 제곱근 판별
 const solution = (n) => Math.sqrt(n) % 1 === 0 ? Math.pow(Math.sqrt(n)+1, 2) : -1;
+
+//정수 내림차순으로 배치하기
+function solution(n) {
+    return Number((n+'').split('').sort((a,b) => b-a).join(''));
+}
