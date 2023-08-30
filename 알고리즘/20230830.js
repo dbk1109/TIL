@@ -95,3 +95,9 @@ const solution = (n) => Math.sqrt(n) % 1 === 0 ? Math.pow(Math.sqrt(n)+1, 2) : -
 function solution(n) {
     return Number((n+'').split('').sort((a,b) => b-a).join(''));
 }
+
+//하샤드 수
+// 하샤드 수 또는 니번 수는 주어진 진법에서 그 수의 각 자릿수 숫자의 합으로 그 수가 나누어지는 양의 정수를 말한다.
+function solution(x) {
+    return x % x.toString().split('').reduce((a,v) => Number(a) + Number(v)) === 0 ? true : false;
+}
