@@ -152,3 +152,10 @@ function solution(absolutes, signs) {
   return absolutes.reduce((s, c, i) => s + (signs[i] ? c : -c), 0);
 }
 
+//없는 숫자 더하기
+function solution(numbers) {
+  let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  return nums.filter((x) => !numbers.includes(x)).reduce((a, c) => a + c);
+}
+//  와 이건 생각 못했는데.. 전체 값에서 빼버리면됨
+//      return 45 - numbers.reduce((cur, acc) => cur + acc, 0);
