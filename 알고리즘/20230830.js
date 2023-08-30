@@ -147,3 +147,8 @@ function solution(arr, divisor) {
 //}
 //이 코드는 filter 대신 reduce를 사용하여 원소를 필터링하고 더 효율적인 처리를 하도록 개선한 것입니다. 이렇게 함으로써 배열을 한 번만 순회하면서 처리하게 되므로 효율성이 더 향상됩니다.
 
+//음양 더하기
+function solution(absolutes, signs) {
+  return absolutes.reduce((s, c, i) => s + (signs[i] ? c : -c), 0);
+}
+
