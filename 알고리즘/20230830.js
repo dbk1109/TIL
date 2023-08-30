@@ -130,3 +130,20 @@ function solution(num, count = 0) {
 function solution(seoul) {
   return `김서방은 ${seoul.indexOf("Kim")}에 있다`;
 }
+
+//나누어 떨어지는 숫자 배열
+function solution(arr, divisor) {
+  let answer = arr.filter((x) => x % divisor === 0).sort((a, b) => a - b);
+  return answer.length > 0 ? answer : [-1];
+}
+// function solution(arr, divisor) {
+//    const answer = arr.reduce((result, current) => {
+//        if (current % divisor === 0) {
+//            result.push(current);
+//        }
+//        return result;
+//    }, []);
+//    return answer.length > 0 ? answer.sort((a, b) => a - b) : [-1];
+//}
+//이 코드는 filter 대신 reduce를 사용하여 원소를 필터링하고 더 효율적인 처리를 하도록 개선한 것입니다. 이렇게 함으로써 배열을 한 번만 순회하면서 처리하게 되므로 효율성이 더 향상됩니다.
+
