@@ -81,3 +81,9 @@ function solution(n) {
 function solution(s) {
   return Number(s);
 }
+//  str/1 해도됨
+
+//문자열 내 p와 y의 개수
+const solution = (s) =>
+  [...s].filter((x) => x.toLowerCase() == "p").length ===
+  [...s].filter((x) => x.toLowerCase() == "y").length;
