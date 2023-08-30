@@ -62,3 +62,11 @@ function solution(x, n) {
   return answer;
 }
 //  실무에선 무조건 퍼포먼스라 for문도 respect 해줍시다 물론 간지는 Array(n).fill(x).map이 더나지만..
+
+//나머지가 1이 되는 수 찾기
+function solution(n) {
+    let x = 1;
+    while( n % x != 1) { x++; }
+    return x;
+}
+//디폴트 값; while문에서 증감 연산자; 가능
