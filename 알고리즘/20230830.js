@@ -52,3 +52,13 @@ function solution(n) {
   return n.toString().split('').reduce((s,v) => Number(s)+Number(v), 0);
 }
 // 초기값을 0으로 지정해야함 (아니면 문자형이므로)
+
+//x만큼 간격이 있는 n개의 숫자
+function solution(x, n) {
+  var answer = [];
+  for (let i = 1; i <= n; i++) {
+    answer.push(x * i);
+  }
+  return answer;
+}
+//  실무에선 무조건 퍼포먼스라 for문도 respect 해줍시다 물론 간지는 Array(n).fill(x).map이 더나지만..
