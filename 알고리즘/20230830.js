@@ -43,3 +43,12 @@ function solution(n) {
 //  }
 //  return answer;
 //}
+
+
+// ** level 1으로 레벨업! *//
+
+//자릿수 더하기
+function solution(n) {
+  return n.toString().split('').reduce((s,v) => Number(s)+Number(v), 0);
+}
+// 초기값을 0으로 지정해야함 (아니면 문자형이므로)
