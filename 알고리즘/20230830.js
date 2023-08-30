@@ -76,3 +76,8 @@ function solution(n) {
     return n.toString().split('').map(x => Number(x)).reverse();
 }
 //  n.toString => (n+"")으로 가능
+
+//문자열을 정수로 바꾸기
+function solution(s) {
+  return Number(s);
+}
