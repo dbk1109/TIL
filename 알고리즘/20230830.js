@@ -87,3 +87,6 @@ function solution(s) {
 const solution = (s) =>
   [...s].filter((x) => x.toLowerCase() == "p").length ===
   [...s].filter((x) => x.toLowerCase() == "y").length;
+
+//정수 제곱근 판별
+const solution = (n) => Math.sqrt(n) % 1 === 0 ? Math.pow(Math.sqrt(n)+1, 2) : -1;
