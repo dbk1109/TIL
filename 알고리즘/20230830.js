@@ -101,3 +101,18 @@ function solution(n) {
 function solution(x) {
     return x % x.toString().split('').reduce((a,v) => Number(a) + Number(v)) === 0 ? true : false;
 }
+
+//두 정수 사이의 합
+function solution(a, b) {
+  let num = 0;
+  let [A, B] = [a, b].sort((x, y) => x - y);
+  for (let i = A; i <= B; i++) {
+    num += i;
+  }
+  return num;
+}
+/// 등차수열 미쳤다
+//function solution(a, b) {
+//  const [A, B] = [a, b].sort((x, y) => x - y);
+//  return ((B - A + 1) * (A + B)) / 2;
+//}
