@@ -70,3 +70,9 @@ function solution(n) {
     return x;
 }
 //디폴트 값; while문에서 증감 연산자; 가능
+
+//자연수 뒤집어 배열로 만들기
+function solution(n) {
+    return n.toString().split('').map(x => Number(x)).reverse();
+}
+//  n.toString => (n+"")으로 가능
