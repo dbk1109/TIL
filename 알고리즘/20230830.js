@@ -159,3 +159,9 @@ function solution(numbers) {
 }
 //  와 이건 생각 못했는데.. 전체 값에서 빼버리면됨
 //      return 45 - numbers.reduce((cur, acc) => cur + acc, 0);
+
+//제일 작은 수 제거하기
+function solution(arr) {
+  arr.splice(arr.indexOf(Math.min(...arr)), 1);
+  return arr.length ? arr : [-1];
+}
