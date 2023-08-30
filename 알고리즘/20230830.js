@@ -165,3 +165,9 @@ function solution(arr) {
   arr.splice(arr.indexOf(Math.min(...arr)), 1);
   return arr.length ? arr : [-1];
 }
+
+//가운데 글자 가져오기
+function solution(s) {
+    var sl2 = parseInt(s.length/2);
+    return s.length % 2 ? s[sl2] : s.split('').slice(sl2-1, sl2 + 1).join('');
+}
