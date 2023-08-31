@@ -37,3 +37,16 @@ function solution(left, right, answer = 0) {
 const solution = (s) => [...s].sort((a, b) => (a < b ? 1 : -1)).join("");
 //  문자열 정렬을 다시한번 복습해보자. 
 //  와 쏠트 리버스ㄷㄷㄷ;;;;
+
+//문자열 다루기 기본
+function solution(s) {
+  return (s.length === 4 || s.length === 6) &&
+    s.length === [...s].filter((x) => x.match(/[0-9]/)).length
+    ? true
+    : false;
+}
+//  test 함수가 있었다니 ㄷㄷ
+//function alpha_string46(s) {
+//    var regex = /^\d{6}$|^\d{4}$/;
+//    return regex.test(s);
+//}
