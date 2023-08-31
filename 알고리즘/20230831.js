@@ -32,3 +32,8 @@ function solution(left, right, answer = 0) {
 //  }
 //  return answer;
 //}
+
+//문자열 내림차순으로 배치하기
+const solution = (s) => [...s].sort((a, b) => (a < b ? 1 : -1)).join("");
+//  문자열 정렬을 다시한번 복습해보자. 
+//  와 쏠트 리버스ㄷㄷㄷ;;;;
