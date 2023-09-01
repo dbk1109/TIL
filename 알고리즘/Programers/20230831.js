@@ -50,3 +50,4 @@ function solution(s) {
 //    var regex = /^\d{6}$|^\d{4}$/;
 //    return regex.test(s);
 //}
+// RegExp.test() 메서드는 주어진 문자열이 정규 표현식을 만족하는지 판별하고, 그 여부를 true 또는 false로 반환합니다
