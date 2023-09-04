@@ -37,3 +37,10 @@ function solution(num1, num2) {
   const lcm = (a, b) => (a * b) / gcd(a, b);
   return [gcd(num1, num2), lcm(num1, num2)];
 }
+// 0이 나오면 for문이 종료되는걸 조건으로 사용해서 for문 적극 활용함
+//function solution(a, b) {
+//  var r;
+//  for (var ab = a * b; (r = a % b); a = b, b = r) {}
+//  return [b, ab / b];
+//}
+
