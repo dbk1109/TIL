@@ -11,7 +11,7 @@
 
 ## 알게된것들
 - `grid-area: grid-row-start, grid-column-start, grid-row-end, grid-column-end`
-    > `grid-column: grid-column-start / grid-column-end`
+    > `grid-column: grid-column-start / grid-column-end` <br/>
     > `grid-row: grid-row-start / grid-row-end`
 
     - 1번 선에서 4번 선까지 처럼 각각 지정 가능
