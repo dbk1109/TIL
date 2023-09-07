@@ -45,4 +45,19 @@ function solution(number) {
   return count
 }
 
-
+//크기가 작은 부분문자열
+//function solution(t, p) {
+//  function maker(index, arr) {
+//    if (index === t.length - p.length + 1) return arr;
+//    arr.push([...t].slice(index, index + p.length).join(""));
+//    return maker(index + 1, arr);
+//  }
+//  return maker(0, []).filter((x) => x <= p).length;
+//}
+/// 런타임에러가 나서 질문하니 재귀함수는 좋지 않은것 같다고 함.
+function solution(t, p, count = 0) {
+  for (let i = 0; i < t.length - p.length + 1; i++) {
+    if ([...t].slice(i, i + p.length).join("") <= p) count++;
+  }
+  return count;
+}
