@@ -61,3 +61,32 @@ function solution(t, p, count = 0) {
   }
   return count;
 }
+
+//숫자 짝꿍
+//function solution(X, Y, answer = []) {
+//    let arr = [X.split(''), Y.split('')].sort((a,b) => a-b);
+//    for(let i = 0; i < arr[0].length; i++) {
+//        if(arr[1].indexOf(arr[0][i]) >= 0) {
+//            arr[1].splice(arr[1].indexOf(arr[0][i]), 1);
+//            answer.push(arr[0][i])
+//        }
+//    }
+//    return answer.length > 0 ? BigInt(answer.sort((a,b)=> b-a).join('')).toString() : "-1"
+//}
+//  시간오류가 나서 객체 형식으로 다시함. splice가 300만 * 300만의 과정을 거치기 때문
+function solution(X, Y, answer = []) {
+    let [s,l] = [X.split(''), Y.split('')].sort((a,b) => a-b);
+    let lObj = {}; // 빈 객체 생성 
+    for (let c of l) { // l의 각 문자에 대해 
+        lObj[c] === undefined ? lObj[c] = 1 : lObj[c] = lObj[c]+1; // 객체의 키로 저장 
+    } 
+    for (let i = 0; i < s.length; i++) { // s의 각 문자에 대해 
+        if (lObj[s[i]]) { // 객체에서 키로 찾기 
+            lObj[s[i]]--; // 키의 값을 변경
+            answer.push(s[i]); // 정답 배열에 추가 
+        }
+    }
+    return answer.length > 0 ? 
+        answer.sort((a,b)=> b-a).join('')[0] === "0" ? "0" : answer.sort((a,b)=> b-a).join('') 
+    : "-1"
+}
