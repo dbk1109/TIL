@@ -1,4 +1,4 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}
 
 @import "_variables.scss";
 @import "_mixins.scss";
@@ -11,6 +11,8 @@ $gradation: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
 					linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
 					linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
 $buttonColor: white;
+$gap: 20px;
+$maxWidth: 1240px;
 
 					
 /* main */
@@ -23,12 +25,18 @@ html {
 	scroll-behavior: smooth;
 }
 
+.dn {
+	display: none !important;
+}
+
 .line_header {
 	background-color: $lineBg;
 	padding: 16px;
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
+	position: relative;
+	z-index: 10;
 }
 .header {
 	padding: 8px 16px;
@@ -65,6 +73,12 @@ html {
 	}
 }
 .container {
+	h2 {
+		font-family: 'Titillium Web', sans-serif;
+		font-size: 32px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
 	> div {
 		min-height: 10vh;
 		padding: 100px;
@@ -86,7 +100,7 @@ html {
 			transform: skew(0, 5deg) translateY(-50px);
 			display: flex;
 			justify-content: space-between;
-			gap: 20px;
+			gap: $gap;
 		}
 		&--img {
 			overflow: hidden;
@@ -107,11 +121,6 @@ html {
 				font-size: 32px;
 				font-weight: bold;
 				margin-bottom: 32px;
-				//&::before, &::after {
-				//	content: "\"";
-				//	display: block;
-				//	position: relative;
-				//}
 				span {
 					display: inline-block;
 					width: 20px;
@@ -122,29 +131,127 @@ html {
 			}
 		}
 	}
+	.divgap {
+		padding: 10%;
+		margin-top: -10%;
+		background-color: linen;
+	}
 	.speakers {
 		background-color: linen;
 		margin-top: -10%;
-		padding-top: 20%;
 		&--inner {
 			display: grid;
-			gap: 20px 10px;
-			grid-template-columns: repeat(5, 20%);
+			gap: $gap;
+			max-width: $maxWidth;
+			margin: 0 auto;
+			grid-template-columns: repeat(5, calc(20% - (80px/5)));
 			grid-template-rows: repeat(2, 50%);
 			> div {
-				height: 100px;
+				height: 240px;
+				padding: 5% 5% 0;
 				background-color: gold;
-				h4 {
-					font-size: 32px;
-					text-align: center;
+				position: relative;
+				transition: .1s;
+				&:hover {
+					transform: scale(1.1) rotate(2deg);
+					box-shadow: 6px 4px 10px 0 rgba(0,0,0,.2);
+					z-index: 3;
+				}
+				img {
+					width: 100%;
+					height: 100%;
+					margin: 0;
+					padding: 0;
+					display: block;
+					background-color:cadetblue;
+					border-radius: 50% 50% 0 0;
+				}
+				> div {
+						position: relative;
+						top: -40%;
+					h4 {
+						font-size: 32px;
+						text-align: center;
+					}
+					p {
+						text-align: center;
+					}
 				}
 			}
 		}
 	}
+	.agenda {
+		&--inner {
+			max-width: $maxWidth;
+			margin: 0 auto;
+			&__timetable {
+				th, td {
+					border: 1px solid black;
+				}
+			}
+		}
+	}
+	.registration {
+		background: url(/image/registration-background.png) repeat;
+		&--inner {
+			max-width: $maxWidth;
+			margin: 0 auto;
+		}
+		&--tickets {
+			display: flex;
+			gap: $gap;
+			margin-bottom: 20px;
+			&__ticket {
+				width: 100%;
+				height: 200px;
+				background-color: blueviolet;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				border-radius: 20px;
+				color: white;
+				font-size: 40px;
+				&::before {
+					content: "";
+					display: block;
+					background-color: white;
+					border-radius: 50%;
+					width: 20px;
+					height: 20px;
+					position: absolute;
+					left: 20px;
+					z-index: 2;
+				}
+				&::after {
+					content: "";
+					display: block;
+					background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+					width: 1px;
+					height: 100%;
+					position: absolute;
+					left: calc(60px);
+				}
+			}
+		}
+		
+	}
+	.sponsors {
+		&--inner {
+			max-width: $maxWidth;
+			margin: 0 auto;
+		}
+	}
 }
+
 
 footer {
 	padding: 100px;
 	background-color: black;
 	color: white;
+}
+
+@media screen and (max-width: 1024px) {
+	
 }
