@@ -2,35 +2,56 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 @import "_variables.scss";
 @import "_mixins.scss";
-@import "_buttons.scss";
+@import "_extends.scss";
 
-$lineBg: rgb(176, 27, 27);
-$headBg: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-$mainBg: gray;
-$gradation: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
-					linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
-					linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
-$buttonColor: white;
-$gap: 20px;
-$maxWidth: 1240px;
 
-					
-/* main */
+:root {
+	--lineBg: rgb(176, 27, 27);
+	--speakersBg: #1b55a6;
+	--headPd: 16px;
+	--headH: 80px;
+	--maxWidth: 1240px;
+	--gap: 20px;
+}
+
+
+@mixin flexBox($justify: flex-start, $alignI: flex-start) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $alignI;
+}
+@mixin headBg($deg: to bottom) {
+	background: linear-gradient($deg, rgba(0, 0, 0, 0.8), 60%, rgba(0, 0, 0, 0));
+}
+@mixin fonts($size: inherit, $weight: 400) {
+	font-size: $size;
+	font-weight: $weight;
+}
+
+
+
 * { 
-	font-family: 'Titillium Web', sans-serif;
+	//font-family: 'Titillium Web', sans-serif;
+	font-family: 'Urbanist', sans-serif;
+	//font-family: 'Victor Mono', monospace;
 	font-weight: 400;
 	line-height: 1.4;
 }
 html {
 	scroll-behavior: smooth;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
 }
-
 .dn {
 	display: none !important;
 }
-
+/*===========================================================================
+	HEADER
+============================================================================*/
 .line_header {
-	background-color: $lineBg;
+	background-color: var(--lineBg);
 	padding: 16px;
 	color: white;
 	text-align: center;
@@ -39,87 +60,103 @@ html {
 	z-index: 10;
 }
 .header {
-	padding: 8px 16px;
-	background: $headBg;
-	display: flex;
-	flex-flow: nowrap;
-	justify-content: space-between;
+	@include flexBox(space-between);
+	flex-wrap: nowrap;
+	padding: var(--headPd);
+	@include headBg(to bottom);
+	backdrop-filter: blur(2px);
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	.logo {
-		width: 100%;
-		//min-width: 100px;
-		min-height: 46px;
-		flex: 1;
-	}
 	&--inner {
-		display: flex;
+		@extend %boxes;
 		padding: 0 20px;
-		justify-content: flex-end;
-		align-items: center;
-		flex: 5;
+		@include flexBox(space-between, center);
+		.logo {
+			flex: 1;
+			max-height: var(--headH);
+			img {
+				max-height: var(--headH);
+				min-height: 42px;
+			}
+		}
 		ul {
-			display: flex;
+			@include flexBox(flex-end, center);
+			flex: 5;
 			gap: 50px;
-			text-transform: uppercase;
-			font-weight: bold;
 			a {
 				text-decoration: none;
-				color: inherit;
+				text-transform: uppercase;
 				color: $buttonColor;
 			}
 		}
 	}
 }
+
+/*===========================================================================
+	CONTAINER
+============================================================================*/
 .container {
-	h2 {
-		font-family: 'Titillium Web', sans-serif;
-		font-size: 32px;
-		font-weight: bold;
-		margin-bottom: 20px;
-	}
-	> div {
+	margin-top: calc(((var(--headPd) * 2) + var(--headH)) * -1);
+	section {
 		min-height: 10vh;
 		padding: 100px;
 		box-sizing: content-box;
+		h2 {
+			font-family: 'Titillium Web', sans-serif;
+			@include fonts(32px, bold);
+			width: fit-content;
+			margin-bottom: 20px;
+		}
 	}
+	&--section {
+		@extend %boxes;
+	}
+	.divGap {
+		display: block;
+		$margin:4%;
+		padding: $margin;
+		margin-top: calc($margin / -1);
+		&.g-speakers {
+			background-color: var(--speakersBg);
+		}
+	}
+	/***** SECTIONS START *****/
 	.main {
-		height: 100vh;
-		background: $mainBg;
-		margin-top: -62px;
+		height: 90vh;
+		background: gray;
 	}
 	.about {
+		$skewX: 10deg;
+		$skewY: 4deg;
+		position: relative;
+		transform: skew(0, -$skewY);
+		margin-top: -100px;
+		padding: 0;
 		background-color: black;
 		color: white;
-		margin-top: -62px;
-		padding: 0;
-		transform: skew(0, -5deg);
-		position: relative;
 		&--inner {
-			transform: skew(0, 5deg) translateY(-50px);
-			display: flex;
-			justify-content: space-between;
-			gap: $gap;
+			@include flexBox(space-between, space-between);
+			transform: skew(0, $skewY) translateY(-25px);
+			gap: var(--gap);
 		}
 		&--img {
 			overflow: hidden;
-			transform: skew(20deg, -5deg) translateX(-120px) translateY(60px);
+			transform: skew($skewX, -$skewY) translateX(-120px) translateY(60px);
 			flex: 1;
 			&__background {
 				background: url("https://avatars.githubusercontent.com/u/75190062?v=4") center center;
-				background-size: cover;
+				background-size: contain;
 				width: 110%;
-				height: 100%;
-				transform: skew(-20deg, 0) translateX(40px);
+				height: 99.5%;
+				transform: skew(-$skewX, 0) translateX(40px);
 			}
 		}
 		&--text {
 			flex: 0.8;
-			padding: 100px;
+    	padding: 3% 10% 3% 0;
 			h3 {
-				font-size: 32px;
-				font-weight: bold;
+				@include fonts(32px, bold);
 				margin-bottom: 32px;
 				span {
 					display: inline-block;
@@ -131,60 +168,92 @@ html {
 			}
 		}
 	}
-	.divgap {
-		padding: 10%;
-		margin-top: -10%;
-		background-color: linen;
-	}
 	.speakers {
-		background-color: linen;
-		margin-top: -10%;
+		background-color: var(--speakersBg);
+		$between: var(--gap);
 		&--inner {
-			display: grid;
-			gap: $gap;
-			max-width: $maxWidth;
-			margin: 0 auto;
-			grid-template-columns: repeat(5, calc(20% - (80px/5)));
-			grid-template-rows: repeat(2, 50%);
-			> div {
-				height: 240px;
-				padding: 5% 5% 0;
-				background-color: gold;
-				position: relative;
+			@include flexBox(space-between, center);
+			flex-wrap: wrap;
+			gap: $between 2px;
+		}
+		&--cover {
+			width: calc(((100% - ($between * 3)) / 4));
+			height: 100%;
+			box-sizing: border-box;
+			padding-top: 20px;
+			position: relative;
+			transition: .1s;
+			background-color: gold;
+			overflow: hidden;
+			@include flexBox(center, center);
+			&:hover {
+				transform: scale(1.05) rotate(2deg);
+				//box-shadow: 10px 10px 10px 0 rgba(0,0,0,.25);
+				filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
+				z-index: 3;
+				img{transform: scale(1.05) rotate(-2deg);}
+			}
+			img {
+				display: block;
+				width: 100%;
+				aspect-ratio: 1 / 1;
+				padding: 0;
+				margin: 0 auto;
 				transition: .1s;
-				&:hover {
-					transform: scale(1.1) rotate(2deg);
-					box-shadow: 6px 4px 10px 0 rgba(0,0,0,.2);
-					z-index: 3;
-				}
-				img {
-					width: 100%;
-					height: 100%;
-					margin: 0;
-					padding: 0;
+			}
+			&:nth-child(-n+3) { 
+				width: calc(((100% - ($between * 2)) / 3));
+			}
+		}
+		&--text {
+			width: 100%;
+			padding: var(--gap);
+			position: absolute;
+			bottom: 0;
+			box-sizing: border-box;
+			@include headBg(to top);
+			backdrop-filter: shadow(0 0 5px rgba(0,0,0,.5));
+			color: white;
+			h4 {
+				@include fonts(32px, 900);
+				text-align: center;
+				text-transform: uppercase;
+				background: url(https://png.pngtree.com/thumb_back/fh260/background/20210828/pngtree-gleneagle-gray-concrete-abstract-texture-background-image_771715.jpg);
+				background-size: cover;
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				filter: drop-shadow(0 0 6px rgba(0, 0, 0, 1));
+				span {
 					display: block;
-					background-color:cadetblue;
-					border-radius: 50% 50% 0 0;
+					@include fonts(14px);
+					line-height: 0.5;
+					-webkit-background-clip: unset;
+					-webkit-text-fill-color: initial;
 				}
-				> div {
-						position: relative;
-						top: -40%;
-					h4 {
-						font-size: 32px;
-						text-align: center;
-					}
-					p {
-						text-align: center;
-					}
+			}
+			p {
+				@include fonts(16px);
+				text-align: center;
+				background-color: var(--lineBg);
+				span {
+					display: block;
+					@include fonts(12px);
 				}
 			}
 		}
 	}
 	.agenda {
+		.container--section {
+			@include flexBox(space-between, flex-start);
+		}
+		div:not(.container--section):first-child	{
+			flex: 1;
+		}
 		&--inner {
-			max-width: $maxWidth;
+			flex: 3;
 			margin: 0 auto;
 			&__timetable {
+				width: 100%;
 				th, td {
 					border: 1px solid black;
 				}
@@ -194,21 +263,18 @@ html {
 	.registration {
 		background: url(/image/registration-background.png) repeat;
 		&--inner {
-			max-width: $maxWidth;
 			margin: 0 auto;
 		}
 		&--tickets {
 			display: flex;
-			gap: $gap;
+			gap: var(--gap);
 			margin-bottom: 20px;
 			&__ticket {
 				width: 100%;
 				height: 200px;
 				background-color: blueviolet;
-				display: flex;
+				@include flexBox(center, center);
 				flex-direction: column;
-				justify-content: center;
-				align-items: center;
 				position: relative;
 				border-radius: 20px;
 				color: white;
@@ -239,19 +305,25 @@ html {
 	}
 	.sponsors {
 		&--inner {
-			max-width: $maxWidth;
 			margin: 0 auto;
 		}
 	}
+	/***** SECTIONS END *****/
 }
 
-
+/*===========================================================================
+	FOOTER
+============================================================================*/
 footer {
 	padding: 100px;
 	background-color: black;
 	color: white;
 }
 
+
+/*===========================================================================
+	MOBILE
+============================================================================*/
 @media screen and (max-width: 1024px) {
 	
 }

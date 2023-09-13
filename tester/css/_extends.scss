@@ -1,0 +1,11 @@
+%button {
+  border-radius: 7px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+%boxes {
+	width: 100%;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+}

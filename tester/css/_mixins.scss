@@ -12,3 +12,17 @@
 //ex) btn_1 { color: blue}
 //btn_2 { color: blue}
 //btn_3 { color: blue}
+
+
+@mixin flexBox($justify: flex-start, $alignI: flex-start) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $alignI;
+}
+@mixin headBg($deg: to bottom) {
+	background: linear-gradient($deg, rgba(0, 0, 0, 0.8), 60%, rgba(0, 0, 0, 0));
+}
+@mixin fonts($size: inherit, $weight: 400) {
+	font-size: $size;
+	font-weight: $weight;
+}

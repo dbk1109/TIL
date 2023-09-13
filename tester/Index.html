@@ -6,14 +6,13 @@
   <title>buk 테스트</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&family=Victor+Mono:ital,wght@0,100;0,400;0,700;1,600;1,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&family=Urbanist:wght@200;400;700;900&family=Victor+Mono:ital,wght@0,100;0,400;0,700;1,600;1,700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
   <div class="line_header">Nov.11 2023, Coex Auditorium, Seoul, Korea | <strong>REGISTRATION NOW OPEN !!</strong> </div>
   <header class="header">
-    <a href="#main"><img class="logo" src="logo.png" alt="logo"></a>
     <div class="header--inner">
+      <a href="#main" class="logo"><img src="/image/logo.svg" alt="logo"></a>
       <ul>
         <li><a href="#about">about</a></li>
         <li><a href="#speakers">speakers</a></li>
@@ -24,117 +23,144 @@
     </div>
   </header>
   <div class="container">
-    <div id="main" class="main">B.I + 행사 일시 장소 + 키패턴이미지</div>
-    <div id="about" class="about">
+    <section id="main" class="main">B.I + 행사 일시 장소 + 키패턴이미지</section>
+
+    <section id="about" class="about">
       <div class="about--inner">
         <div class="about--img">
-          <div class="about--img__background"></div>
+          <div class="about--img__background">dfdf</div>
         </div>
         <div class="about--text">
-          <h3 class="about--title"> RESTORING THE FOUNDING SPIRIT AND IDENTITY<br />나는 자랑스러운 대한민국 국민입니다.</h3>
+          <h3 class="about--title">
+            RESTORING THE FOUNDING SPIRIT AND IDENTITY<br />
+            나는 자랑스러운 대한민국 국민입니다.
+          </h3>
           <p>
             <strong>FREEDOM MATTERS</strong>
-            "Build Up Korea 2023" is the 1st annual U.S.-Korea Conservative Conference for the Next Generation of Koreans taking place in Seoul, Korea. The event aims to bring together U.S. politicians, influencers, and pastors to discuss the theme of "Restoring the Founding Spirit and Identity." The conference will focus on exploring ways to reconnect with the values and principles that formed the basis of the Korean and U.S. founding values and ideals, with a particular emphasis on how the younger generation can play a role in shaping the future of the world.
+            "Build Up Korea 2023" is the 1st annual U.S.-Korea Conservative Conference 
+            for the Next Generation of Koreans taking place in Seoul, Korea.
+            The event aims to bring together U.S. politicians, influencers, and pastors 
+            to discuss the theme of "Restoring the Founding Spirit and Identity." 
+            The conference will focus on exploring ways to reconnect with the values 
+            and principles that formed the basis of the Korean and U.S. founding values
+            and ideals, with a particular emphasis on how the younger generation can play
+            a role in shaping the future of the world.
           </p>
         </div>
       </div>
-    </div>
-    <div class="divgap"></div>
-    <div id="speakers" class="speakers">
-      <h2>Speakers</h2>
-      <div class="speakers--inner">
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-        <div><img src="" alt=""><div><h4>Name Here</h4><p>English (국문) 소속 here</p></div></div>
-      </div>
-    </div>
-    <div id="agenda" class="agenda">
-      <h2>Agenda</h2>
-      <div class="agenda--inner">
-        <button>PDF Download</button>
-        <table class="agenda--inner__timetable">
-          프로그램 표 형식으로 기입
-          <thead>
-            <th>version</th>
-            <th>start</th>
-            <th>end</th>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1차 버전(예매시간 미노출)</td>
-              <td>등록시작시간</td>
-              <td>식사 및 종료시간</td>
-            </tr>
-            <tr>
-              <td>2차 or final</td>
-              <td>등록시간</td>
-              <td>(시간 + 세션타이틀 + 연사)</td>
-            </tr>
-          </tbody>
-          <tfoot></tfoot>
-        </table>
-      </div>
-    </div>
-    <div id="registration" class="registration">
-      <h2>Registration</h2>
-      <div class="registration--inner">
-        <div class="registration--tickets">
-          <div class="registration--tickets__ticket"><p>Ticket Type 1</p></div>
-          <div class="registration--tickets__ticket"><p>Ticket Type 2</p></div>
-          <div class="registration--tickets__ticket"><p>Ticket Type 3</p></div>
+    </section>
+
+    <span class="divGap g-speakers"></span>
+
+    <section id="speakers" class="speakers">
+      <div class="container--section">
+        <h2>Speakers</h2>
+        <div class="speakers--inner">
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
+          <div class="speakers--cover"><img src="/image/speakers/Ted Yoho.png" alt=""><div class="speakers--text"><h4><span>테드 요호</span>Ted Yoho</h4><p>U.S. House of Representatives <span>미국 공화당 하원의원</span></p></div></div>
         </div>
-        <p class="policy">
-          <strong>환불 및 취소 규정</strong><br />
-          ※ Build Up Korea 2023 등록 및 참석 관련 문의는 사무국 0000 으로 연락 바랍니다.<br />
-          <br />
-          티켓 구매 마감일 8일 전까지: 전액 환불<br />
-          티켓 구매 마감일 1일 전까지: 수수료 10% 공제 후 환불<br />
-          행사 당일: 환불 불가<br />
-          취소 및 환불은 신청 후 7일 이내로 진행됩니다.<br />
-          <br />
-          <strong>공지사항</strong><br />
-          Build up Korea 2023은 오프라인(현장 참가)으로 진행됩니다.<br />
-          현장 티켓 결제 이전에 등록 신청서를 작성 부탁드립니다.<br />
-          현장 티켓 금액은 부가세 포함이며, 구매는 카드결제만 가능합니다.<br />
-          중고등학생, 대학생 및 대학원생은 할인된 금액으로 티켓 구매가 가능합니다. (*단, 행사 당일 신분증과 학생증 지참 필수, 미지참 시 티켓 정상가로 추가 결제 진행)<br />
-          세금계산서 발행을 통한 결제는 등록 사무국으로 문의해주시기 바랍니다.<br />
-        </p>
       </div>
-    </div>
-    <div id="sponsors" class="sponsors">
-      <h2>Sponsors</h2>
-      <div class="sponsors--inner">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
-        <img src="./image/sponsors/sample.png" alt="">
+    </section>
+
+    <section id="agenda" class="agenda">
+      <div class="container--section">
+        <div class="agneda--left">
+          <h2>Agenda</h2>
+          <button>PDF Download</button>
+        </div>
+        <div class="agenda--inner">
+          <table class="agenda--inner__timetable">
+            프로그램 표 형식으로 기입
+            <thead>
+              <th>version</th>
+              <th>start</th>
+              <th>end</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1차 버전(예매시간 미노출)</td>
+                <td>등록시작시간</td>
+                <td>식사 및 종료시간</td>
+              </tr>
+              <tr>
+                <td>2차 or final</td>
+                <td>등록시간</td>
+                <td>(시간 + 세션타이틀 + 연사)</td>
+              </tr>
+            </tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section id="registration" class="registration">
+      <div class="container--section">
+        <h2>Registration</h2>
+        <div class="registration--inner">
+          <div class="registration--tickets">
+            <div class="registration--tickets__ticket"><p>Ticket Type 1</p></div>
+            <div class="registration--tickets__ticket"><p>Ticket Type 2</p></div>
+            <div class="registration--tickets__ticket"><p>Ticket Type 3</p></div>
+          </div>
+          <p class="policy">
+            <strong>환불 및 취소 규정</strong><br />
+            ※ Build Up Korea 2023 등록 및 참석 관련 문의는 사무국 0000 으로 연락 바랍니다.<br />
+            <br />
+            티켓 구매 마감일 8일 전까지: 전액 환불<br />
+            티켓 구매 마감일 1일 전까지: 수수료 10% 공제 후 환불<br />
+            행사 당일: 환불 불가<br />
+            취소 및 환불은 신청 후 7일 이내로 진행됩니다.<br />
+            <br />
+            <strong>공지사항</strong><br />
+            Build up Korea 2023은 오프라인(현장 참가)으로 진행됩니다.<br />
+            현장 티켓 결제 이전에 등록 신청서를 작성 부탁드립니다.<br />
+            현장 티켓 금액은 부가세 포함이며, 구매는 카드결제만 가능합니다.<br />
+            중고등학생, 대학생 및 대학원생은 할인된 금액으로 티켓 구매가 가능합니다. (*단, 행사 당일 신분증과 학생증 지참 필수, 미지참 시 티켓 정상가로 추가 결제 진행)<br />
+            세금계산서 발행을 통한 결제는 등록 사무국으로 문의해주시기 바랍니다.<br />
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsors" class="sponsors">
+      <div class="container--section">
+        <h2>Sponsors</h2>
+        <div class="sponsors--inner">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+          <img src="./image/sponsors/sample.png" alt="">
+        </div>
+      </div>
+    </section>
   </div>
   <footer>
     <h2>BUILD UP KOREA 2023 Secretariat</h2>
