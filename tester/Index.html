@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>buk 테스트</title>
+  <script src="https://kit.fontawesome.com/02bd83a24e.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&family=Urbanist:wght@200;400;700;900&family=Victor+Mono:ital,wght@0,100;0,400;0,700;1,600;1,700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="/css/style.min.css">
@@ -11,7 +12,7 @@
 <body>
   <div class="line_header">Nov.11 2023, Coex Auditorium, Seoul, Korea | <strong>REGISTRATION NOW OPEN !!</strong> </div>
   <header class="header">
-    <div class="header--inner">
+    <div class="header--inner container--section">
       <a href="#main" class="logo"><img src="/image/logo.svg" alt="logo"></a>
       <ul>
         <li><a href="#about">about</a></li>
@@ -20,32 +21,35 @@
         <li><a href="#registration">registration</a></li>
         <li><a href="#sponsors">sponsors</a></li>
       </ul>
+      <a class="btn single" href="http://#" target="_blank">REGISTER HERE</a>
     </div>
   </header>
   <div class="container">
-    <section id="main" class="main">B.I + 행사 일시 장소 + 키패턴이미지</section>
+    <section id="main" class="main">
+      Build up korea 2023<br />
+      Nov. 11(SAT) 2023, Coex auditorium
+    </section>
 
     <section id="about" class="about">
-      <div class="about--inner">
-        <div class="about--img">
-          <div class="about--img__background">dfdf</div>
-        </div>
+      <div class="about--inner container--section">
         <div class="about--text">
           <h3 class="about--title">
-            RESTORING THE FOUNDING SPIRIT AND IDENTITY<br />
+            RESTORING THE FOUNDING<br/>
+            <span>SPIRIT AND IDENTITY</span><br />
             나는 자랑스러운 대한민국 국민입니다.
           </h3>
           <p>
             <strong>FREEDOM MATTERS</strong>
-            "Build Up Korea 2023" is the 1st annual U.S.-Korea Conservative Conference 
-            for the Next Generation of Koreans taking place in Seoul, Korea.
-            The event aims to bring together U.S. politicians, influencers, and pastors 
-            to discuss the theme of "Restoring the Founding Spirit and Identity." 
-            The conference will focus on exploring ways to reconnect with the values 
-            and principles that formed the basis of the Korean and U.S. founding values
-            and ideals, with a particular emphasis on how the younger generation can play
-            a role in shaping the future of the world.
+            "Build Up Korea 2023" is the 1st annual U.S.-Korea Conservative Conference for the Next Generation of Koreans taking place in Seoul, Korea. The event aims to bring together U.S. politicians, influencers, and pastors to discuss the theme of "Restoring the Founding Spirit and Identity." <br />
+            The conference will focus on exploring ways to reconnect with the values and principles that formed the basis of the Korean and U.S. founding values and ideals, with a particular emphasis on how the younger generation can play a role in shaping the future of the world.<br />
+            <br />
+            '빌드업코리아 2023'은 대한민국 서울에서 열리는 제1회 연례 한미 차세대 보수 콘퍼런스입니다.<br />
+            이 행사는 미국 정치인, 영향력 있는 인사, 목회자들이 모여 ＂건국 정신과 정체성의 회복＂ 이라는 주제로 한국과 미국의 건국 가치와 이상에 기초가 된 가치와 원칙을 다시 연결할 수 있는 방법을 모색하는 데 초점을 맞추려 합니다. 특히 젊은 세대가 세계의 미래를 형성하는 데 어떤 역할을 할 수 있는지에 대해 중점적으로 논의할 예정입니다.
+
           </p>
+        </div>
+        <div class="about--img dn">
+          <div class="about--img__background"></div>
         </div>
       </div>
     </section>
@@ -73,9 +77,9 @@
 
     <section id="agenda" class="agenda">
       <div class="container--section">
-        <div class="agneda--left">
+        <div class="agenda--left">
           <h2>Agenda</h2>
-          <button>PDF Download</button>
+          <a class="btn download" href="#" download>PDF Download <img src="/image/download.svg" alt="download icon"></a>
         </div>
         <div class="agenda--inner">
           <table class="agenda--inner__timetable">
@@ -94,7 +98,7 @@
               <tr>
                 <td>2차 or final</td>
                 <td>등록시간</td>
-                <td>(시간 + 세션타이틀 + 연사)</td>
+                <td>시간 + 세션타이틀 + 연사</td>
               </tr>
             </tbody>
             <tfoot></tfoot>
@@ -108,11 +112,17 @@
         <h2>Registration</h2>
         <div class="registration--inner">
           <div class="registration--tickets">
-            <div class="registration--tickets__ticket"><p>Ticket Type 1</p></div>
-            <div class="registration--tickets__ticket"><p>Ticket Type 2</p></div>
-            <div class="registration--tickets__ticket"><p>Ticket Type 3</p></div>
+            <div class="registration__ticket">
+              <p>Ticket Type 1</p>
+            </div>
+            <div class="registration__ticket">
+              <p>Ticket Type 2</p>
+            </div>
+            <div class="registration__ticket">
+              <p>Ticket Type 3</p>
+            </div>
           </div>
-          <p class="policy">
+          <p class="registration--policy">
             <strong>환불 및 취소 규정</strong><br />
             ※ Build Up Korea 2023 등록 및 참석 관련 문의는 사무국 0000 으로 연락 바랍니다.<br />
             <br />
@@ -132,44 +142,93 @@
       </div>
     </section>
 
+    <section id="contact" class="contact">
+
+      <div class="container--section">
+        <h2>Contact</h2>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-ypaox08db6x824TT9Ps4fNOGe2k5ojV8Q2DJrMjKcqzswA/formResponse" target="_blank" method="POST" id="ss-form2" onsubmit="">
+          <div role="list" style="padding-left: 0">
+            <div role="listitem">
+              <label for="entry_2041335759">
+                <div class="q-title">Name</div>
+                <input name="entry.2041335759" rows="8" cols="0" id="entry_2041335759" dir="auto" aria-label="문의 및 주문내용 (이메일에 첨부설명해 주셔도 됩니다) 수정사항을 최대한 자세히 작성해 주세요. 여러장일경우 번호를 붙여 설명해 주세요 "></input>
+              </label>
+              <label for="entry_1558559603">
+                <div>email</div>
+                <input name="entry.1558559603" type="text" id="entry_1558559603" >
+              </label>
+              <label for="entry_1528590931">
+                <div>Message</div>
+                <textarea name="entry.1528590931" type="text" id="entry_1528590931" ></textarea>
+              </label>
+            </div>
+
+            <input type="hidden" name="fvv" value="1">
+            <input type="hidden" name="partialResponse" value="[null,null,&quot;2133546524294306068&quot;]">
+            <input type="hidden" name="pageHistory" value="0">
+            <input type="hidden" name="fbzx" value="-3270907319350710010">
+            <div>
+              <table id="navigation-table">
+                <tbody>
+                  <tr>
+                    <td id="navigation-buttons" dir="ltr">
+                      <input type="submit" name="submit" value="보내기" id="ss-submit">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </section>
+
     <section id="sponsors" class="sponsors">
       <div class="container--section">
         <h2>Sponsors</h2>
-        <div class="sponsors--inner">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-          <img src="./image/sponsors/sample.png" alt="">
-        </div>
       </div>
+      <marquee class="sponsors--inner" behavior="scroll" direction="left">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+        <img src="./image/sponsors/sample.png" alt="">
+      </marquee>
     </section>
   </div>
-  <footer>
-    <h2>BUILD UP KOREA 2023 Secretariat</h2>
-    <p>
-      Thebased.co<br />
-      info@buildupkora.org<br />
-      USA +01 202 710 2484<br />
-      KOR +82 10 9991 7614<br />
-    </p>
+  <footer class="footer">
+    <div class="footer--inner">
+      <h2>BUILD UP KOREA 2023 Secretariat</h2>
+      <p>
+        <a href="http://Thebased.co" target="_blank">Thebased.co</a> | <a href="https://www.buildupkorea.org/" target="_blank">www.buildupkorea.org/</a><br />
+        <a href="mailto:info@buildupkora.org" target="_blank">info@buildupkora.org</a><br />
+        USA <a href="tel:+01-202-710-2484" target="_blank">+01 202 710 2484</a><br />
+        KOR <a href="tel:+82-10-9991-7614" target="_blank">+82 10 9991 7614</a>
+      </p>
+    </div>
+    <div class="footer--social">
+      <div><a href="http://" target="_blank">SNS</a></div>
+      <div><a href="http://" target="_blank">SNS</a></div>
+      <div><a href="http://" target="_blank">SNS</a></div>
+    </div>
   </footer>
 </body>
 </html>

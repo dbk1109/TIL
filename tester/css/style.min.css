@@ -31,7 +31,12 @@ table {
   border-spacing: 0;
 }
 
-.container--section, .header--inner {
+a, button {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container--section {
   width: 100%;
   max-width: var(--maxWidth);
   margin: 0 auto;
@@ -39,7 +44,8 @@ table {
 
 :root {
   --lineBg: rgb(176, 27, 27);
-  --speakersBg: #1b55a6;
+  --speakersBg: #0c2343;
+  --fontColor: white;
   --headPd: 16px;
   --headH: 80px;
   --maxWidth: 1240px;
@@ -54,13 +60,40 @@ table {
 
 html {
   scroll-behavior: smooth;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
 
 .dn {
   display: none !important;
+}
+
+.btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 2px;
+  transition: 0.2s ease-in-out;
+}
+.btn.single {
+  background-color: var(--lineBg);
+  color: var(--fontColor);
+}
+.btn.single:hover {
+  transform: scale(0.8);
+}
+.btn.download {
+  background-color: gray;
+  color: var(--fontColor);
+  box-sizing: border-box;
+  box-shadow: 4px 4px 0 black;
+}
+.btn.download:hover {
+  background-color: var(--lineBg);
+  box-shadow: unset;
 }
 
 /*===========================================================================
@@ -69,7 +102,7 @@ html {
 .line_header {
   background-color: var(--lineBg);
   padding: 16px;
-  color: white;
+  color: var(--fontColor);
   text-align: center;
   text-transform: uppercase;
   position: relative;
@@ -90,10 +123,11 @@ html {
   z-index: 999;
 }
 .header--inner {
-  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 50px;
+  padding: 0 20px;
 }
 .header--inner .logo {
   flex: 1;
@@ -121,20 +155,18 @@ html {
 ============================================================================*/
 .container {
   margin-top: calc((var(--headPd) * 2 + var(--headH)) * -1);
-  /***** SECTIONS START *****/
-  /***** SECTIONS END *****/
 }
 .container section {
   min-height: 10vh;
-  padding: 100px;
+  padding: 5%;
   box-sizing: content-box;
 }
 .container section h2 {
+  width: -moz-fit-content;
+  width: fit-content;
   font-family: "Titillium Web", sans-serif;
   font-size: 32px;
   font-weight: bold;
-  width: -moz-fit-content;
-  width: fit-content;
   margin-bottom: 20px;
 }
 .container .divGap {
@@ -145,85 +177,100 @@ html {
 .container .divGap.g-speakers {
   background-color: var(--speakersBg);
 }
-.container .main {
-  height: 90vh;
-  background: gray;
+
+/***** SECTIONS START *****/
+.main {
+  height: 80vh;
+  background: url(/image/main.jpg) center center no-repeat;
+  background-size: 101%;
+  color: var(--fontColor);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10%;
 }
-.container .about {
+
+.about {
   position: relative;
-  transform: skew(0, -4deg);
-  margin-top: -100px;
+  transform: skew(0, -2deg);
+  margin-top: -50px;
   padding: 0;
   background-color: black;
-  color: white;
+  color: var(--fontColor);
+  overflow: hidden;
 }
-.container .about--inner {
+.about--inner {
   display: flex;
   justify-content: space-between;
   align-items: space-between;
-  transform: skew(0, 4deg) translateY(-25px);
+  transform: skew(0, 2deg) translateY(25px);
   gap: var(--gap);
 }
-.container .about--img {
+.about--img {
   overflow: hidden;
-  transform: skew(10deg, -4deg) translateX(-120px) translateY(60px);
-  flex: 1;
+  transform: translateX(60px) translateY(-50px);
+  flex: 1.2;
 }
-.container .about--img__background {
+.about--img__background {
   background: url("https://avatars.githubusercontent.com/u/75190062?v=4") center center;
-  background-size: contain;
-  width: 110%;
-  height: 99.5%;
-  transform: skew(-10deg, 0) translateX(40px);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
-.container .about--text {
-  flex: 0.8;
-  padding: 3% 10% 3% 0;
+.about--text {
+  flex: 1;
+  padding: 5% 0 10%;
 }
-.container .about--text h3 {
+.about--text h3 {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 32px;
+  line-height: 1.2;
 }
-.container .about--text h3 span {
-  display: inline-block;
-  width: 20px;
+.about--text h3 span {
+  font-weight: bold;
+  color: black;
+  -webkit-text-stroke: 1px gold;
+  text-shadow: -1px 0 4px gold, 1px 0 4px gold, 0 -1px 4px gold, 0 1px 4px gold;
 }
-.container .about--text p {
+.about--text p {
   display: block;
 }
-.container .speakers {
+
+.speakers {
   background-color: var(--speakersBg);
 }
-.container .speakers--inner {
+.speakers h2 {
+  color: var(--fontColor);
+}
+.speakers--inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   gap: var(--gap) 2px;
 }
-.container .speakers--cover {
+.speakers--cover {
   width: calc((100% - var(--gap) * 3) / 4);
   height: 100%;
   box-sizing: border-box;
   padding-top: 20px;
   position: relative;
   transition: 0.1s;
-  background-color: gold;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.container .speakers--cover:hover {
+.speakers--cover:hover {
   transform: scale(1.05) rotate(2deg);
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
   z-index: 3;
 }
-.container .speakers--cover:hover img {
+.speakers--cover:hover img {
   transform: scale(1.05) rotate(-2deg);
 }
-.container .speakers--cover img {
+.speakers--cover img {
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
@@ -231,10 +278,10 @@ html {
   margin: 0 auto;
   transition: 0.1s;
 }
-.container .speakers--cover:nth-child(-n+3) {
+.speakers--cover:nth-child(-n+3) {
   width: calc((100% - var(--gap) * 2) / 3);
 }
-.container .speakers--text {
+.speakers--text {
   width: 100%;
   padding: var(--gap);
   position: absolute;
@@ -243,9 +290,9 @@ html {
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), 60%, rgba(0, 0, 0, 0));
   -webkit-backdrop-filter: shadow(0 0 5px rgba(0, 0, 0, 0.5));
           backdrop-filter: shadow(0 0 5px rgba(0, 0, 0, 0.5));
-  color: white;
+  color: var(--fontColor);
 }
-.container .speakers--text h4 {
+.speakers--text h4 {
   font-size: 32px;
   font-weight: 900;
   text-align: center;
@@ -256,7 +303,7 @@ html {
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 6px rgb(0, 0, 0));
 }
-.container .speakers--text h4 span {
+.speakers--text h4 span {
   display: block;
   font-size: 14px;
   font-weight: 400;
@@ -264,90 +311,146 @@ html {
   -webkit-background-clip: unset;
   -webkit-text-fill-color: initial;
 }
-.container .speakers--text p {
+.speakers--text p {
   font-size: 16px;
   font-weight: 400;
   text-align: center;
   background-color: var(--lineBg);
 }
-.container .speakers--text p span {
+.speakers--text p span {
   display: block;
   font-size: 12px;
   font-weight: 400;
 }
-.container .agenda .container--section {
+
+.agenda .container--section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
-.container .agenda div:not(.container--section):first-child {
+.agenda--left {
   flex: 1;
 }
-.container .agenda--inner {
+.agenda--left .btn img {
+  filter: invert(94%) sepia(0%) saturate(7474%) hue-rotate(69deg) brightness(107%) contrast(107%);
+  width: 20px;
+  height: 20px;
+}
+.agenda--inner {
   flex: 3;
   margin: 0 auto;
 }
-.container .agenda--inner__timetable {
+.agenda--inner__timetable {
   width: 100%;
 }
-.container .agenda--inner__timetable th, .container .agenda--inner__timetable td {
+.agenda--inner__timetable th, .agenda--inner__timetable td {
+  text-align: center;
   border: 1px solid black;
+  border-radius: 2px;
+  padding: 5px;
 }
-.container .registration {
+
+.registration {
   background: url(/image/registration-background.png) repeat;
 }
-.container .registration--inner {
+.registration--inner {
   margin: 0 auto;
 }
-.container .registration--tickets {
+.registration--tickets {
   display: flex;
   gap: var(--gap);
   margin-bottom: 20px;
 }
-.container .registration--tickets__ticket {
-  width: 100%;
-  height: 200px;
-  background-color: blueviolet;
+.registration__ticket {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  width: 100%;
+  height: 180px;
+  background-color: var(--speakersBg);
+  color: var(--fontColor);
   position: relative;
-  border-radius: 20px;
-  color: white;
-  font-size: 40px;
+  transition: 0.1s;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
-.container .registration--tickets__ticket::before {
+.registration__ticket:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+  z-index: 3;
+}
+.registration__ticket p {
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-left: 30px;
+}
+.registration__ticket::before, .registration__ticket::after {
   content: "";
   display: block;
-  background-color: white;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
   position: absolute;
-  left: 20px;
-  z-index: 2;
 }
-.container .registration--tickets__ticket::after {
-  content: "";
-  display: block;
-  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='white' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+.registration__ticket::before {
+  width: 15px;
+  height: 15px;
+  left: 15px;
+  z-index: 2;
+  background-color: var(--fontColor);
+  border-radius: 50%;
+  box-shadow: inset 5px 5px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.1s;
+}
+.registration__ticket::after {
   width: 1px;
   height: 100%;
-  position: absolute;
-  left: 60px;
+  left: 50px;
+  background-image: url("/image/stroke-line.svg");
 }
-.container .sponsors--inner {
+.registration--policy {
+  padding-top: 20px;
+}
+.registration--policy strong {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sponsors--inner {
   margin: 0 auto;
 }
 
+.contact {
+  background-color: antiquewhite;
+}
+.contact iframe {
+  width: 100%;
+  height: 1080px;
+}
+
+/***** SECTIONS END *****/
 /*===========================================================================
 	FOOTER
 ============================================================================*/
-footer {
-  padding: 100px;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5%;
   background-color: black;
-  color: white;
+  color: var(--fontColor);
+}
+.footer--social {
+  display: flex;
+  gap: var(--gap);
+}
+.footer--social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  color: black;
+  background-color: gold;
+  border-radius: 10px;
 }
 
 /*===========================================================================
