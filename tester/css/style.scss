@@ -1,4 +1,5 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}a,button{text-decoration: none; color: inherit;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}table{border-collapse:collapse;border-spacing:0;}a,button{text-decoration: none; color: inherit;}
+//blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 
 @import "_variables.scss";
 @import "_mixins.scss";
@@ -6,11 +7,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 
 :root {
-	--lineBg: rgb(176, 27, 27);
+	--lineBgColor: rgb(176, 27, 27);
 	--speakersBg: #0c2343;
 	--fontColor: white;
 	--headPd: 16px;
-	--headH: 80px;
+	--headH: 60px;
 	--maxWidth: 1240px;
 	--gap: 20px;
 }
@@ -29,7 +30,18 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	font-weight: $weight;
 }
 
-
+/*===========================================================================
+	MOBILE
+============================================================================*/
+$tablet-width: 1024px;
+@mixin tablet {
+	@media screen and (max-width: #{$tablet-width}) {
+		:root {
+			--maxWidth: 767px;
+		}
+		@content;
+	}
+}
 
 * { 
 	//font-family: 'Titillium Web', sans-serif;
@@ -37,6 +49,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	//font-family: 'Victor Mono', monospace;
 	font-weight: 400;
 	line-height: 1.4;
+	box-sizing: border-box;
 }
 html {
 	scroll-behavior: smooth;
@@ -52,26 +65,39 @@ html {
 	@include flexBox(space-between, center);
 	gap: 6px;
 	width: fit-content;
-	padding: 8px 16px;
+	padding: 10px 16px;
 	font-weight: bold;
+	border: 0;
 	border-radius: 2px;
 	transition: .2s ease-in-out;
-	&.single {
-		background-color: var(--lineBg);
+	cursor: pointer;
+	&__red {
+		background-color: var(--lineBgColor);
 		color: var(--fontColor);
-		&:hover {
-			transform: scale(0.8);
-		}
 	}
-	&.download {
+	&__gray {
 		background-color: gray;
 		color: var(--fontColor);
-		box-sizing: border-box;
+		&:hover {
+			background-color: var(--lineBgColor);
+		}
+	}
+	&__scale_08:hover {
+		transform: scale(0.8);
+	}
+	&__push {
+		transform: translateX(-5px) translateY(-5px);
 		box-shadow: 4px 4px 0 black;
 		&:hover {
-			background-color: var(--lineBg);
+			transform: translateX(0);
 			box-shadow: unset;
 		}
+	}
+	&.submit {
+		width: 25%;
+		justify-content: center;
+		@include fonts(16px, bold);
+		margin-top: 20px;
 	}
 }
 
@@ -79,19 +105,23 @@ html {
 	HEADER
 ============================================================================*/
 .line_header {
-	background-color: var(--lineBg);
+	background-color: var(--lineBgColor);
 	padding: 16px;
 	color: var(--fontColor);
 	text-align: center;
 	text-transform: uppercase;
 	position: relative;
 	z-index: 10;
+	strong { font-weight:bold }
+	@include tablet() {
+		strong { display:block}
+		span {display: none;}
+	}
 }
 .header {
-	@include flexBox(space-between);
-	flex-wrap: nowrap;
 	padding: var(--headPd);
 	@include headBg(to bottom);
+	@include tablet(){padding: 0; background: rgba(0, 0, 0, 0.5);}
 	backdrop-filter: blur(2px);
 	position: sticky;
 	top: 0;
@@ -99,19 +129,84 @@ html {
 	&--inner {
 		@include flexBox(space-between, center);
 		gap: 50px;
-		padding: 0 20px;
 		.logo {
 			flex: 1;
 			max-height: var(--headH);
-			img {
-				max-height: var(--headH);
-				min-height: 42px;
+			img {height:var(--headH)}
+			@include tablet(){
+				--headH: 32px;
+				flex: unset; padding: var(--headPd); box-sizing: content-box;
 			}
 		}
+		input:checked {
+			+.header--hamburger span {
+				&:nth-child(1){top:50%;transform:translateY(-50%) rotate(45deg)}
+				&:nth-child(2){opacity:0}
+				&:nth-child(3){bottom:50%;transform:translateY(50%) rotate(-45deg);}
+			}
+			~.header--GNB {
+				height: auto;
+				ul {
+					transform: scaleY(1);
+				}
+			}
+		}
+	}
+	&--hamburger {
+		display: none;
+		@include tablet(){display: block;}
+		$size: 24px;
+		width: $size * 1.25;
+		height: $size;
+		cursor: pointer;
+    position: absolute;
+    top: 21px;
+    right: 21px;
+		z-index: 9;
+		span {
+			background: white;
+			display: block;
+			width: 100%;
+			$line: 3px;
+			height: $line;
+			border-radius: $line;
+			position: absolute;
+			transition: all 0.2s;
+			&:nth-child(1) { top:0; }
+			&:nth-child(2) { top:calc(50% - $line / 2); }
+			&:nth-child(3) { bottom:0; }
+		}
+	}
+	&--GNB {
+		flex: 5;
+		width: 100%;
+		height: 0;
+		@include tablet(){
+			flex: 1;
+			overflow: hidden;
+			position: absolute;
+			top: 64px;
+			z-index: -1;
+		}
 		ul {
-			@include flexBox(flex-end, center);
-			flex: 5;
 			gap: 50px;
+			transition: all 0.35s;
+			@include flexBox(flex-end, center);
+			@include tablet() {
+				flex-direction: column;
+				transform-origin: top;
+				transform: scaleY(0);
+				background-color: rgba(0, 0, 0, 0.5);
+				gap: 0;
+				li, a {
+					display: block;
+					width: 100%;
+					a {
+						padding: 20px;
+						text-align: center;
+					}
+				}
+			}
 			a {
 				text-decoration: none;
 				text-transform: uppercase;
@@ -126,6 +221,7 @@ html {
 ============================================================================*/
 .container {
 	margin-top: calc(((var(--headPd) * 2) + var(--headH)) * -1);
+	@include tablet(){margin-top: -64px;}
 	section {
 		min-height: 10vh;
 		padding: 5%;
@@ -154,10 +250,9 @@ html {
 .main {
 	height: 80vh;
 	background: url(/image/main.jpg) center center no-repeat;
-	background-size: 101%;
+	background-size: cover;
 	color: var(--fontColor);
 	@include flexBox(center, flex-end);
-	padding-bottom: 10%;
 }
 .about {
 	$skewX: 10deg;
@@ -169,6 +264,7 @@ html {
 	background-color: black;
 	color: var(--fontColor);
 	overflow: hidden;
+	@include tablet(){margin-top: -16px;}
 	&--inner {
 		@include flexBox(space-between, space-between);
 		transform: skew(0, $skewY) translateY(25px);
@@ -221,7 +317,6 @@ html {
 	&--cover {
 		width: calc(((100% - ($between * 3)) / 4));
 		height: 100%;
-		box-sizing: border-box;
 		padding-top: 20px;
 		position: relative;
 		transition: .1s;
@@ -230,7 +325,6 @@ html {
 		@include flexBox(center, center);
 		&:hover {
 			transform: scale(1.05) rotate(2deg);
-			//box-shadow: 10px 10px 10px 0 rgba(0,0,0,.25);
 			filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.5));
 			z-index: 3;
 			img{transform: scale(1.05) rotate(-2deg);}
@@ -276,7 +370,7 @@ html {
 		p {
 			@include fonts(16px);
 			text-align: center;
-			background-color: var(--lineBg);
+			background-color: var(--lineBgColor);
 			span {
 				display: block;
 				@include fonts(12px);
@@ -285,6 +379,7 @@ html {
 	}
 }
 .agenda {
+	background: url(/image/registration-background.png) repeat;
 	.container--section {
 		@include flexBox(space-between, flex-start);
 	}
@@ -311,7 +406,6 @@ html {
 	}
 }
 .registration {
-	background: url(/image/registration-background.png) repeat;
 	&--inner {
 		margin: 0 auto;
 	}
@@ -319,6 +413,9 @@ html {
 		display: flex;
 		gap: var(--gap);
 		margin-bottom: 20px;
+		@include tablet() {
+			flex-direction: column;
+		}
 	}
 	&__ticket {
 		@include flexBox(center, center);
@@ -376,10 +473,31 @@ html {
 	}
 }
 .contact {
-	background-color:antiquewhite;
-	iframe {
-		width: 100%;
-		height: 1080px;
+	background-color:rgb(55, 55, 55);
+	color: var(--fontColor);
+	.container--section {
+		@include flexBox(space-between);
+		gap: var(--gap);
+		h2 {flex: 1;}
+		form {flex: 3;}
+	}
+	&--inner {
+		display: grid;
+		grid-template: 1fr / repeat(2, 1fr);
+		gap: var(--gap);
+		label, input, textarea {
+			display: block;
+			width: 100%;
+		}
+		input, textarea {
+			padding: 8px 16px;
+			box-sizing: border-box;
+			border-radius: 4px;
+			margin-top: 8px;
+		}
+		label:last-child {
+			grid-column: 1 / span 2;
+		}
 	}
 }
 /***** SECTIONS END *****/
@@ -404,12 +522,4 @@ html {
 			border-radius: 10px;
 		}
 	}
-}
-
-
-/*===========================================================================
-	MOBILE
-============================================================================*/
-@media screen and (max-width: 1024px) {
-	
 }

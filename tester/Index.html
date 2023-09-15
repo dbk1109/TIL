@@ -10,18 +10,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&family=Urbanist:wght@200;400;700;900&family=Victor+Mono:ital,wght@0,100;0,400;0,700;1,600;1,700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
-  <div class="line_header">Nov.11 2023, Coex Auditorium, Seoul, Korea | <strong>REGISTRATION NOW OPEN !!</strong> </div>
+  <div class="line_header">Nov.11 2023, Coex Auditorium, Seoul, Korea <span>|</span> <strong>REGISTRATION NOW OPEN !!</strong> </div>
   <header class="header">
     <div class="header--inner container--section">
       <a href="#main" class="logo"><img src="/image/logo.svg" alt="logo"></a>
-      <ul>
-        <li><a href="#about">about</a></li>
-        <li><a href="#speakers">speakers</a></li>
-        <li><a href="#agenda">agenda</a></li>
-        <li><a href="#registration">registration</a></li>
-        <li><a href="#sponsors">sponsors</a></li>
-      </ul>
-      <a class="btn single" href="http://#" target="_blank">REGISTER HERE</a>
+      <input type="checkbox" id="isMobile" class="dn">
+      <label class="header--hamburger" for="isMobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav class="header--GNB">
+        <ul>
+          <li><a href="#about">about</a></li>
+          <li><a href="#speakers">speakers</a></li>
+          <li><a href="#agenda">agenda</a></li>
+          <li><a href="#registration">registration</a></li>
+          <li><a href="#sponsors">sponsors</a></li>
+          <li><a class="btn btn__red btn__scale_08" href="http://#" target="_blank">REGISTER HERE</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
   <div class="container">
@@ -34,8 +42,8 @@
       <div class="about--inner container--section">
         <div class="about--text">
           <h3 class="about--title">
-            RESTORING THE FOUNDING<br/>
-            <span>SPIRIT AND IDENTITY</span><br />
+            <q>RESTORING THE FOUNDING<br />
+            <span>SPIRIT AND IDENTITY</span></q><br />
             나는 자랑스러운 대한민국 국민입니다.
           </h3>
           <p>
@@ -43,8 +51,8 @@
             "Build Up Korea 2023" is the 1st annual U.S.-Korea Conservative Conference for the Next Generation of Koreans taking place in Seoul, Korea. The event aims to bring together U.S. politicians, influencers, and pastors to discuss the theme of "Restoring the Founding Spirit and Identity." <br />
             The conference will focus on exploring ways to reconnect with the values and principles that formed the basis of the Korean and U.S. founding values and ideals, with a particular emphasis on how the younger generation can play a role in shaping the future of the world.<br />
             <br />
-            '빌드업코리아 2023'은 대한민국 서울에서 열리는 제1회 연례 한미 차세대 보수 콘퍼런스입니다.<br />
-            이 행사는 미국 정치인, 영향력 있는 인사, 목회자들이 모여 ＂건국 정신과 정체성의 회복＂ 이라는 주제로 한국과 미국의 건국 가치와 이상에 기초가 된 가치와 원칙을 다시 연결할 수 있는 방법을 모색하는 데 초점을 맞추려 합니다. 특히 젊은 세대가 세계의 미래를 형성하는 데 어떤 역할을 할 수 있는지에 대해 중점적으로 논의할 예정입니다.
+            <em>'빌드업코리아 2023'</em>은 대한민국 서울에서 열리는 제1회 연례 한미 차세대 보수 콘퍼런스입니다.<br />
+            이 행사는 미국 정치인, 영향력 있는 인사, 목회자들이 모여 "건국 정신과 정체성의 회복" 이라는 주제로 한국과 미국의 건국 가치와 이상에 기초가 된 가치와 원칙을 다시 연결할 수 있는 방법을 모색하는 데 초점을 맞추려 합니다. 특히 젊은 세대가 세계의 미래를 형성하는 데 어떤 역할을 할 수 있는지에 대해 중점적으로 논의할 예정입니다.
 
           </p>
         </div>
@@ -79,7 +87,7 @@
       <div class="container--section">
         <div class="agenda--left">
           <h2>Agenda</h2>
-          <a class="btn download" href="#" download>PDF Download <img src="/image/download.svg" alt="download icon"></a>
+          <button class="btn btn__gray btn__push" href="#" download>PDF Download <img src="/image/download.svg" alt="download icon"></button>
         </div>
         <div class="agenda--inner">
           <table class="agenda--inner__timetable">
@@ -143,45 +151,26 @@
     </section>
 
     <section id="contact" class="contact">
-
       <div class="container--section">
         <h2>Contact</h2>
-        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-ypaox08db6x824TT9Ps4fNOGe2k5ojV8Q2DJrMjKcqzswA/formResponse" target="_blank" method="POST" id="ss-form2" onsubmit="">
-          <div role="list" style="padding-left: 0">
-            <div role="listitem">
-              <label for="entry_2041335759">
-                <div class="q-title">Name</div>
-                <input name="entry.2041335759" rows="8" cols="0" id="entry_2041335759" dir="auto" aria-label="문의 및 주문내용 (이메일에 첨부설명해 주셔도 됩니다) 수정사항을 최대한 자세히 작성해 주세요. 여러장일경우 번호를 붙여 설명해 주세요 "></input>
-              </label>
-              <label for="entry_1558559603">
-                <div>email</div>
-                <input name="entry.1558559603" type="text" id="entry_1558559603" >
-              </label>
-              <label for="entry_1528590931">
-                <div>Message</div>
-                <textarea name="entry.1528590931" type="text" id="entry_1528590931" ></textarea>
-              </label>
-            </div>
-
-            <input type="hidden" name="fvv" value="1">
-            <input type="hidden" name="partialResponse" value="[null,null,&quot;2133546524294306068&quot;]">
-            <input type="hidden" name="pageHistory" value="0">
-            <input type="hidden" name="fbzx" value="-3270907319350710010">
-            <div>
-              <table id="navigation-table">
-                <tbody>
-                  <tr>
-                    <td id="navigation-buttons" dir="ltr">
-                      <input type="submit" name="submit" value="보내기" id="ss-submit">
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSf-ypaox08db6x824TT9Ps4fNOGe2k5ojV8Q2DJrMjKcqzswA/formResponse" target="_blank" method="POST" id="contact__form" onsubmit="">
+          <div class="contact--inner">
+            <label for="entry_2041335759">
+              <p>Name</p>
+              <input name="entry.2041335759" rows="8" cols="0" id="entry_2041335759" dir="auto" aria-label="문의 및 주문내용 (이메일에 첨부설명해 주셔도 됩니다) 수정사항을 최대한 자세히 작성해 주세요. 여러장일경우 번호를 붙여 설명해 주세요 "></input>
+            </label>
+            <label for="entry_1558559603">
+              <p>Email</p>
+              <input name="entry.1558559603" type="text" id="entry_1558559603">
+            </label>
+            <label for="entry_1528590931">
+              <p>Message</p>
+              <textarea name="entry.1528590931" rows="4" id="entry_1528590931"></textarea>
+            </label>
           </div>
+          <input type="submit" name="submit" value="보내기" id="contact__submit" class="btn submit btn__scale_08">
         </form>
       </div>
-
     </section>
 
     <section id="sponsors" class="sponsors">
