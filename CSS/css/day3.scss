@@ -1,0 +1,63 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+:root {
+  --orange: #F04111;
+  --black: #000;
+  --ivory: #DDE1D4;
+}
+
+@mixin gridBox($template) {
+  display: grid;
+  grid-template: $template;
+  gap: 15px;
+}
+
+body {
+  background-color: var(--ivory);
+  padding:15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 650px;
+  width: 100%;
+  height: 100vh;
+  margin:0 auto;
+}
+
+#poster {
+  $gridColumn: 0.8fr 1fr 50px 1fr;
+  @include gridBox(100px repeat(2, 1fr) 1.5fr / $gridColumn);
+  margin-bottom: 15px;
+  grid-template-areas: 
+    "header header header header"
+    "posterTop posterTop posterTop side"
+    "posterTop posterTop posterTop side"
+    "posterBottom posterBottom posterBottom posterBottom ";
+  height: 100%;
+  > * {display: grid;}
+  header {
+    grid-area: header;
+    @include gridBox( 1fr / $gridColumn);
+    background-color: var(--black);
+    color: var(--ivory);
+    align-items: end;
+    padding: 10px;
+    p {line-height: 1.3;}
+  }
+  div {
+    background-color: var(--orange);
+    color: var(--black);
+    padding: 10px;
+    justify-items: stretch;
+    h2 {font-size: 190px; font-weight: bold; }
+    &.posterTop {
+      grid-area: posterTop;
+      align-items: end;
+    }
+    &.side {
+      grid-area: side;
+    }
+    &.posterBottom {
+      grid-area: posterBottom;
+      h4 {font-size: 38px; color:var(--ivory); margin-top: -50px;}
+    }
+  }
+}

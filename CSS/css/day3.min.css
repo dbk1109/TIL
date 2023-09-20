@@ -1,0 +1,66 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+:root {
+  --orange: #F04111;
+  --black: #000;
+  --ivory: #DDE1D4;
+}
+
+body {
+  background-color: var(--ivory);
+  padding: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  max-width: 650px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+#poster {
+  display: grid;
+  grid-template: 100px repeat(2, 1fr) 1.5fr/0.8fr 1fr 50px 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+  grid-template-areas: "header header header header" "posterTop posterTop posterTop side" "posterTop posterTop posterTop side" "posterBottom posterBottom posterBottom posterBottom ";
+  height: 100%;
+}
+#poster > * {
+  display: grid;
+}
+#poster header {
+  grid-area: header;
+  display: grid;
+  grid-template: 1fr/0.8fr 1fr 50px 1fr;
+  gap: 15px;
+  background-color: var(--black);
+  color: var(--ivory);
+  align-items: end;
+  padding: 10px;
+}
+#poster header p {
+  line-height: 1.3;
+}
+#poster div {
+  background-color: var(--orange);
+  color: var(--black);
+  padding: 10px;
+  justify-items: stretch;
+}
+#poster div h2 {
+  font-size: 190px;
+  font-weight: bold;
+}
+#poster div.posterTop {
+  grid-area: posterTop;
+  align-items: end;
+}
+#poster div.side {
+  grid-area: side;
+}
+#poster div.posterBottom {
+  grid-area: posterBottom;
+}
+#poster div.posterBottom h4 {
+  font-size: 38px;
+  color: var(--ivory);
+  margin-top: -50px;
+}/*# sourceMappingURL=day3.min.css.map */
