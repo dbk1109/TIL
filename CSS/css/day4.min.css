@@ -1,0 +1,56 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+body {
+  background-color: #DDE1D4;
+  padding: 15px;
+  font-family: "Yeseva One", cursive, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template: 2fr repeat(2, 1fr)/repeat(4, 1fr);
+  place-items: stretch stretch;
+  box-sizing: border-box;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+}
+div:nth-child(1) {
+  background-color: #DAE7DF;
+  color: #F44608;
+}
+div:nth-child(2) {
+  background-color: #288A69;
+  color: #ffffff;
+}
+div:nth-child(3) {
+  background-color: #F44608;
+  color: #ffffff;
+}
+div:nth-child(4) {
+  background-color: #F7ABC5;
+  color: #F44608;
+}
+div:nth-child(5) {
+  background-color: #5F60AA;
+  color: #ffffff;
+}
+div:nth-child(6) {
+  background-color: #F9C129;
+  color: #F44608;
+}
+div:nth-child(7) {
+  background-color: #F67374;
+  color: #ffffff;
+}
+div.big {
+  font-size: 62px;
+  grid-column-end: span 2;
+}
+div.big:nth-child(3) {
+  grid-row: 2/span 2;
+}/*# sourceMappingURL=day4.min.css.map */
