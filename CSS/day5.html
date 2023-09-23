@@ -28,3 +28,23 @@
 </body>
 
 </html>
+
+<!--
+  solution https://replit.com/@serranoarevalo/EasyHandmadeMinimalsystem
+  전체적인 HTML 구조 만들기
+  최상단 타이틀을 포함하고 있는 header 태그를 생성합니다.
+  컨텐츠 내용을 포함하는 있는 article 태그를 생성합니다.
+  이미지를 포함하는 있는 div.cover 태그를 생성합니다.
+  Grid를 사용해서 레이아웃 만들기
+  body안에 있는 header, article, div.cover에게 grid속성을 사용하기 위해 부모 요소인 body에게 display: grid를 정의해줍니다.
+  body에 grid-template-columns: repeat(auto-fit, minmax(255px, 1fr))을 줘서 자식 요소들의 너비를 지정합니다.
+  minmax(255px, 1fr) 함수를 사용해서 자식 요소들의 최소 크기는 255px로, 최대 크기는 fr단위를 사용해서 남아 있는 공간 안에서 일정 비율로 모두 채웁니다.
+  auto-fit을 사용해서 남아있는 column공간이 있다면 자동으로 grid 아이템들의 공간으로 모두 채웁니다.
+  grid-template-rows: 8vw를 사용해서 가장 상단의 header태그의 높이를 vw단위를 사용해서 가변적으로 지정합니다.
+  grid-auto-rows: 46vh를 해줘서 추가로 생기는 content들에 대해서 따로 크기를 지정해주지 않아도 자동으로 기본값을 할당해서 생성해주도록 합니다.
+  header태그에 grid-column: 1 / -1를 사용해서 시작 값 1과 끝 값 -1을 지정해서 첫 번째 line부터 마지막 line까지의 영역을 크기로 지정합니다.
+  결론
+  auto-fit 을 사용해서 남는 column공간을 grid 아이템들의 공간으로 자동으로 채울 수 있습니다.
+  minmax()를 사용해서 행과 열의 최소, 최대 크기를 지정할 수 있습니다. minmax()의 첫 번째 인수는 최소값이고 두 번째 인수는 최대값입니다.
+  grid-column을 사용해서 grid 아이템의 시작 값과 끝 값으로 크기를 지정할 수 있습니다.
+-->
