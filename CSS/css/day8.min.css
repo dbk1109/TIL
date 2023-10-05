@@ -4,10 +4,44 @@ body {
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template: repeat(4, 1fr)/repeat(4, 1fr);
+  grid-template: repeat(3, 1fr)/repeat(4, 1fr);
+}
+
+:root {
+  --bg_1: #000;
+  --bg_2: #6C01FF;
+  --bg_3: #FFFFFF;
+  --bg_4: #FFFFFF;
+  --bg_5: #F41507;
+  --bg_6: #FFFFFF;
+  --bg_7: #FAC907;
 }
 
 div {
   background-color: red;
   height: 100%;
+}
+div:nth-child(1) {
+  background: var(--bg_1);
+}
+div:nth-child(2) {
+  background: var(--bg_2);
+}
+div:nth-child(3) {
+  background: var(--bg_3);
+}
+div:nth-child(4) {
+  background: var(--bg_4);
+}
+div:nth-child(5) {
+  background: var(--bg_5);
+}
+div:nth-child(6) {
+  background: var(--bg_6);
+}
+div:nth-child(7) {
+  background: var(--bg_7);
+}
+div.long {
+  grid-row: -1;
 }/*# sourceMappingURL=day8.min.css.map */
