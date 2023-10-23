@@ -1,8 +1,16 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@font-face {
+  font-family: "IBMPlexSansKR-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "IBMPlexSansKR-Regular", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   width: 100%;
   height: 100vh;
+  display: grid;
+  grid-template: repeat(3, 1fr)/repeat(auto-fill, minmax(25%, 1fr));
 }
 
 :root {
@@ -15,21 +23,54 @@ body {
   --bg_7: #FAC907;
 }
 
-.father {
-  display: grid;
-  gap: 10px;
-  height: 100vh;
-  grid-template: repeat(2, 100px)/repeat(5, 1fr);
-  background-color: lightblue;
-  justify-content: center;
-  align-content: center;
+div {
+  padding: 15px;
+  line-height: 1.25;
+  font-size: 150%;
 }
-
-.child {
-  background-color: tomato;
-  color: white;
-  font-size: 28px;
+div:nth-child(1) {
+  background: var(--bg_1);
+}
+div:nth-child(2) {
+  background: var(--bg_2);
+}
+div:nth-child(3) {
+  background: var(--bg_3);
+  grid-column: 3;
+  grid-row: span 3;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+div:nth-child(4) {
+  background: var(--bg_4);
+  grid-column: 4;
+  grid-row: span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+div:nth-child(5) {
+  background: var(--bg_5);
+  grid-row: span 2;
+  font-size: 32px;
+  font-weight: bold;
+}
+div:nth-child(6) {
+  background: var(--bg_6);
+}
+div:nth-child(7) {
+  background: var(--bg_7);
+  font-size: 32px;
+  font-weight: bold;
+}
+div h6 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+div strong {
+  background-color: #6C01FF;
+}
+div img {
+  max-width: 100%;
 }/*# sourceMappingURL=day8.min.css.map */

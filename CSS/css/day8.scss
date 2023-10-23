@@ -1,11 +1,16 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "IBMPlexSansKR-Regular", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 100%;
   height: 100vh;
-  //display: grid;
-  //grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(auto-fill, minmax(25%, 1fr));
 }
 :root {
   --bg_1: #000;
@@ -17,35 +22,32 @@ body {
   --bg_7: #FAC907;
 }
 
-.father {
-  display: grid;
-  gap: 10px;
-  height: 100vh;
-  grid-template: repeat(2, 100px) / repeat(5, 1fr);
-  background-color: lightblue;
-  justify-content: center;
-  align-content: center;
+div {
+  @for $i from 1 to 8 {
+    &:nth-child(#{$i}) {
+      background: var(--bg_#{$i});
+      @if $i == 3 or $i == 4 {
+        grid-column: $i;
+        grid-row: span 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      @if $i == 5 {
+        grid-row: span 2;
+        font-size: 32px;
+        font-weight: bold;
+      }
+      @if $i == 7 {
+        font-size: 32px;
+        font-weight: bold;
+      }
+    }
+  }
+  padding: 15px;
+  line-height: 1.25;
+  font-size: 150%;
+  h6 {font-size: 16px;margin-bottom: 20px;}
+  strong {background-color: #6C01FF; }
+  img {max-width: 100%;}
 }
-
-.child {
-  background-color: tomato;
-  color: white;
-  font-size: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-//div {
-//  background-color: red;
-//  height: 100%;
-//  //@for $i from 1 to 8 {
-//  //  &:nth-child(#{$i}) {background: var(--bg_#{$i})}
-//  //  @if $i == 3 or $i == 4 {
-//  //    &:nth-child(#{$i}) {grid-column: -1;}
-//  //  }
-//  //}
-//  //&.long {
-//  //  grid-row: -1;
-//  //}
-//}
