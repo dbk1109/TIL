@@ -4,8 +4,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+  //display: grid;
+  //grid-template: repeat(3, 1fr) / repeat(4, 1fr);
 }
 :root {
   --bg_1: #000;
@@ -16,13 +16,36 @@ body {
   --bg_6: #FFFFFF;
   --bg_7: #FAC907;
 }
-div {
-  background-color: red;
-  height: 100%;
-  @for $i from 1 to 8 {
-    &:nth-child(#{$i}) {background: var(--bg_#{$i})}
-  }
-  &.long {
-    grid-row: -1;
-  }
+
+.father {
+  display: grid;
+  gap: 10px;
+  height: 100vh;
+  grid-template: repeat(2, 100px) / repeat(5, 1fr);
+  background-color: lightblue;
+  justify-content: center;
+  align-content: center;
 }
+
+.child {
+  background-color: tomato;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//div {
+//  background-color: red;
+//  height: 100%;
+//  //@for $i from 1 to 8 {
+//  //  &:nth-child(#{$i}) {background: var(--bg_#{$i})}
+//  //  @if $i == 3 or $i == 4 {
+//  //    &:nth-child(#{$i}) {grid-column: -1;}
+//  //  }
+//  //}
+//  //&.long {
+//  //  grid-row: -1;
+//  //}
+//}
