@@ -101,3 +101,22 @@
   `grid-row-start`
   grid-column-start와 grid-row-start를 사용해서 grid 아이템의 시작 값을 지정해주세요.
 -->
+
+<!--
+  solution https://replit.com/repls/HiddenSturdyWorkplaces#style.css
+  전체적인 HTML 구조 만들기
+  body아래에 크게 header, div, section, section, nav a 를 생성합니다.
+  section태그안에 h4와 span태그들을 생성합니다.
+  nav태그안에 ul과 li태그들을 생성합니다.
+  Grid를 사용해서 레이아웃 만들기
+  body아래에 자식 태그들에 grid속성을 사용하기 위해 부모 요소인 body에게 display: grid를 정의해줍니다.
+  body에 grid-template-columns:repeat(4, 1fr)와 grid-template-rows:repeat(3, 1fr)을 줘서 각각 동일한 너비를 가진 4개의 열과 동일한 높이를 가진 3개의 행을 생성합니다.
+  section에 grid-row: span 3을 줘서 3개 행의 셀을 가지도록 지정합니다.
+  nav에 grid-column-start:1을 줘서 grid 아이템의 시작 값을 열에서 1번째 줄로 지정합니다. 그리고 추가로 grid-row: span 2를 줘서 시작 값 1을 기준으로 2개 행의 셀을 가지도록 지정합니다.
+  a에 grid-row-start:3을 줘서 grid 아이템의 시작 값을 행에서 3번째 줄로 지정합니다. 그리고 grid-column-start:2을 줘서 grid 아이템의 시작 값을 열에서 2번째 줄로 지정합니다.
+  grid-row-start와 grid-column-start를 같이 사용해서 grid아이템의 행과 열의 시작점을 지정할 수 있습니다.
+  결론
+  grid-template-columns와 grid-template-rows, repeat()함수와 fr단위를 통해 행과 열을 생성할 수 있습니다.
+  grid-column과 grid-row를 사용해서 행 또는 열의 셀 영역 크기를 지정할 수 있습니다.
+  grid-column-start와 grid-row-start를 사용해서 grid 아이템의 시작 값을 지정할 수 있습니다.
+-->
