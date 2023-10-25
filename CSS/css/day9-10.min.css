@@ -34,10 +34,10 @@ body {
   }
 }
 .back__left {
-  background: red url(/image/day9-10_1.jpg) center/cover no-repeat;
+  background: red url("./../image/day9-10_1.jpg") center/cover no-repeat;
 }
 .back__right {
-  background: blue url(/image/day9-10_2.jpg) center/cover no-repeat;
+  background: blue url("./../image/day9-10_2.jpg") center/cover no-repeat;
 }
 .back--logo {
   position: absolute;
@@ -45,7 +45,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(/image/day9-10_logo.png) center/26% no-repeat;
+  background: url("./../image/day9-10_logo.png") center/26% no-repeat;
 }
 
 @keyframes scroll {
@@ -178,10 +178,10 @@ section {
   height: 50px;
 }
 .section__right a.flower::before, .section__right a.flower::after {
-  background: url(/image/day9-10_flower.svg) no-repeat;
+  background: url("./../image/day9-10_flower.svg") no-repeat;
 }
 .section__right a.star::before, .section__right a.star::after {
-  background: url(/image/day9-10_star.svg) center center no-repeat;
+  background: url("./../image/day9-10_star.svg") center center no-repeat;
 }
 .section__right a::before {
   top: 0;
