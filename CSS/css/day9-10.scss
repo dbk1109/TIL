@@ -2,13 +2,28 @@
 
 * {
   box-sizing: border-box;
+  letter-spacing: 2px;
+  text-decoration: unset;
 }
+@mixin tablet() {
+  @media screen and (max-width: 767px) {
+    @content;
+  }
+}
+
 body {
   font-family: 'akkuratBoldItalic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   position: relative;
 }
+
+:root {
+  --orange: #ff6c2c;
+  --gap: 20px;
+}
+
 .back {
   width: 100%;
   height: 100%;
@@ -17,18 +32,16 @@ body {
   z-index: -1;
   display: grid;
   grid-template: 1fr / repeat(2, 1fr);
+  @include tablet() {
+    grid-template: repeat(2, 1fr) / 1fr;
+  }
   &__left  { background: red  url(/image/day9-10_1.jpg) center / cover no-repeat;}
   &__right { background: blue url(/image/day9-10_2.jpg) center / cover no-repeat; }
   &--logo {
     position: absolute; top: 0;left: 0;
     width: 100%; height: 100%;
-    background: url(/image/day9-10_logo.png) center / 30% no-repeat; 
+    background: url(/image/day9-10_logo.png) center / 26% no-repeat; 
   }
-}
-
-:root {
-  --orange: #ff6c2c;
-  --gap: 10px;
 }
 
 @keyframes scroll {
@@ -36,16 +49,13 @@ body {
   to { transform:translateX(calc(-100% - var(--gap)))}
 }
 
-
-
-
 section {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   border: 12px solid #F2E556;
   display: grid;
   grid-template: 40px 1fr 40px / 50px 1fr 50px;
-  /*>div {border: 2px solid red;}*/
 }
 
 .marquee {
@@ -58,9 +68,6 @@ section {
   background: white;
   color: var(--orange);
   border: 4px solid var(--orange);
-  &:hover .marquee__content {
-    animation-play-state: paused;
-  }
   ul {
     flex-shrink: 0;
     display: flex;
@@ -70,35 +77,43 @@ section {
     font-size: 24px;
     font-style: italic;
     font-weight: 700;
-    letter-spacing: 2px;
     animation: scroll 40s linear infinite;
+    @media (prefers-reduced-motion: reduce) {
+      animation-play-state: paused !important;
+    }
   }
   &.reverse ul{
     animation: scroll 20s linear reverse infinite;
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee__content {
-    animation-play-state: paused !important;
+  &:hover ul{
+    animation-play-state: paused;
   }
 }
 
-.menu {
-  /*grid-row: ;*/
+.section__left {
   color: white;
   display: grid;
-  grid-template-columns: 1.5fr 1fr 80px;
-  writing-mode: tb;
-  ul {
+  grid-template-rows: 1.5fr 1fr 80px;
+  > * {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: var(--gap);
+    background: white;
+    color: var(--orange);
+    font-weight: bold;
+    border: 4px solid var(--orange);
+    &:not(:first-child) {border-top: 0;}
+    &:last-child {border-bottom: 0;}
+  } 
+  .menu, .sns {--gap: 10px;}
+  .menu {
     background: var(--orange);
     li {
       writing-mode: tb;
       text-orientation: upright;
+      a { color:white; }
       span {
         display: inline-block;
         transform: skewX(10deg);
@@ -106,21 +121,65 @@ section {
       }
     }
   }
-  > div {
-    transform: rotate(180deg);
-    background: white;
-    border: 4px solid var(--orange);
-    border-top: 0;
-  } 
+  .news h3 { 
+    transform: rotate(180deg) skewY(12deg);
+    font-size: 20px;
+    writing-mode: tb;
+    img {transform: rotate(180deg);}
+  }
 }
 
-.right {
+.section__right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  writing-mode: tb;
+  text-orientation: upright;
   background: #40ac49;
   border-top: 0;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  > * {
+  a {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     border: 4px solid var(--orange);
-    border-top: 0;
+    &:not(:first-child) {border-top: 0;}
+    &:last-child {border-bottom: 0;}
+    color: white;
+    font-weight: bold;
+    position: relative;
+    &::before, &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 50px;
+    }
+    &.flower{&::before,&::after{background:url(/image/day9-10_flower.svg) no-repeat}}
+    &.star { &::before,&::after{background:url(/image/day9-10_star.svg) center center no-repeat}}
+    &::before { top:0 }
+    &::after { bottom: 0; }
+  }
+  span {
+    h4 { transform:skew(-12deg)}
+    &.deco {background: white;width: 100%;height: 2px;}
+  }
+}
+
+.floating {
+  $position: 36px;
+  $size: 68px;
+  position: absolute;
+  bottom: $position;
+  right: $position;
+  background-color: var(--orange);
+  width: $size;
+  height: $size;
+  border-radius: 8px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+  img {width: 32px;}
+  &:hover {
+    transform: scale(1.2);
   }
 }
