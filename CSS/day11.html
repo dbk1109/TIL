@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Day11 - Food Art G전체ery</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="./css/day11.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="container">
+  <section class="filter">
+    <select name="filter--year" id="filter--year">
+      <option value="">날짜: 전체</option>
+      <option value="2021">2021</option>
+      <option value="2022">2022</option>
+      <option value="2023">2023</option>
+    </select>
+    <select name="filter--themes" id="filter--themes">
+      <option value="">카테고리: 전체</option>
+      <option value="한식">한식</option>
+      <option value="일식">일식</option>
+      <option value="중식">중식</option>
+      <option value="양식">양식</option>
+      <option value="기타">기타</option>
+    </select>
+    <select name="filter--form" id="filter--form">
+      <option value="">취식형태: 전체</option>
+      <option value="제조">제조</option>
+      <option value="배달/포장">배달/포장</option>
+      <option value="마트">마트</option>
+      <option value="라이브커머스">라이브커머스</option>
+      <option value="오프라인">오프라인</option>
+    </select>
+    <select name="filter--price" id="filter--price">
+      <option value="">가격대: 전체</option>
+      <option value="저렴함">저렴함</option>
+      <option value="평균">평균</option>
+      <option value="비쌈">비쌈</option>
+    </select>
+    <select name="filter--star" id="filter--star">
+      <option value="">별점: 전체</option>
+      <option value="⭐️">⭐️</option>
+      <option value="⭐️⭐️">⭐️⭐️</option>
+      <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+      <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+      <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
+    </select>
+  </section>
+  <section class="contents">
+    <article>
+      <div class="top"> <p>10.22</p> <p>한식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>페리카나 박달동점</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>10.22</p> <p>한식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>BBQ 안양박달점</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>10.16</p> <p>한식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>그램치킨 강남본점</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>10.13</p> <p>한식, 일식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>한일합밥 한식과일식의만남</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>9.24</p> <p>한식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>뀨네또와</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>9.19</p> <p>중식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>일미집</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>9.19</p> <p>중식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>일미집</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>9.15</p> <p>일식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>육회바른연어 본점</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>9.4</p> <p>양식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>맥도날드</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>8.10</p> <p>일식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>벚꽃스시</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>7.23</p> <p>중식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>텐미미마라탕</p> <a href="#">더보기</a> </div>
+    </article>
+    <article>
+      <div class="top"> <p>7.12</p> <p>양식</p> </div>
+      <div class="ctn__img"></div>
+      <div class="bottom"> <p>킴브로스 피자</p> <a href="#">더보기</a> </div>
+    </article>
+  </section>
+</body>
+
+</html>
+<!--
+  TA's 힌트
+  flex, grid: flex와 grid를 사용해서 레이아웃을 만드세요.
+  grid-template-columns
+  grid-template-columns를 사용해서 동일한 너비를 가진 4개의 열을 repeat()함수와 auto-fit 을 사용해서 만드세요.
+  minmax를 사용해서 최소 크기와 최대 크기를 지정하세요.
+  grid-template-rows: grid-template-rows를 사용해서 동일한 높이를 가진 3개의 행을 repeat()함수를 사용해서 만드세요.
+  gap: gap속성을 사용해서 행과 열 사이 간격에 테두리를 만드세요.
+-->
