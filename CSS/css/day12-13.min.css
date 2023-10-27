@@ -1,0 +1,63 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+
+:root {
+  --c-white: white;
+  --c-black: black;
+  --c-orange: #F67403;
+  --c-red: #F40503;
+  --c-pink: #F600FF;
+  --c-blue: #2000FF;
+  --padding: 16px;
+}
+
+* {
+  border: 1px solid !important;
+  box-sizing: border-box !important;
+}
+
+main {
+  display: grid;
+  grid-template: 1fr/2fr 68px 1fr;
+  width: 100%;
+  height: 100%;
+  background-color: #2000FF;
+}
+main::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  background-color: yellow;
+}
+
+.menu {
+  display: grid;
+  grid-template: 1fr 1fr/1fr;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.menu > div {
+  height: 50%;
+  writing-mode: tb;
+  text-orientation: sideways;
+  display: flex;
+  align-items: center;
+}
+.menu > div:nth-child(3) {
+  background-color: var(--c-pink);
+}
+.menu > div p {
+  height: 100%;
+}
+.menu > img {
+  width: 100%;
+  position: absolute;
+  top: calc(50% - 34px);
+  transform: rotate(90deg);
+}/*# sourceMappingURL=day12-13.min.css.map */

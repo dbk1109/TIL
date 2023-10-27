@@ -122,3 +122,26 @@
   grid-template-rows: grid-template-rows를 사용해서 동일한 높이를 가진 3개의 행을 repeat()함수를 사용해서 만드세요.
   gap: gap속성을 사용해서 행과 열 사이 간격에 테두리를 만드세요.
 -->
+<!--
+  TA's 정답 해설
+  전체적인 HTML 구조 만들기
+  body아래에 상단 네비게이션을 의미하는 div.nav와 메인 콘텐츠들을 포함하고 있는 main 을 생성합니다.
+  div.nav아래에는 5개의 div.nav__item을 생성합니다.
+  main아래에 12개의 div.post를 생성합니다.
+  div.post아래에는 텍스트들을 담고 있는 2개의 div.post__row와 img태그를 생성합니다.
+  Flex와 Grid를 사용해서 레이아웃 만들기
+  div.nav안에 있는 div.nav__item에게 grid속성을 사용하기 위해 부모 요소인 div.nav에게 display: grid를 정의해줍니다.
+  div.nav에 grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))을 줘서 자식 요소들의 너비를 지정합니다.
+  minmax(150px, 1fr) 함수를 사용해서 자식 요소들의 최소 크기는 150px로, 최대 크기는 fr단위를 사용해서 남아 있는 공간 안에서 일정 비율로 모두 채웁니다.
+  auto-fit을 사용해서 남아있는 column공간이 있다면 자동으로 grid 아이템들의 공간으로 모두 채웁니다.
+  main안에 있는 div.post에게 grid속성을 사용하기 위해 부모 요소인 main에게 display: grid를 정의해줍니다.
+  main에 grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))을 줘서 자식 요소들의 너비를 지정하고 grid-template-rows:repeat(3, 1fr)을 줘서 동일한 높이를 가지는 3개의 행을 생성합니다.
+  minmax(400px, 1fr) 함수를 사용해서 자식 요소들의 최소 크기는 400px로, 최대 크기는 fr단위를 사용해서 남아 있는 공간 안에서 일정 비율로 모두 채웁니다.
+  auto-fit을 사용해서 남아있는 column공간이 있다면 자동으로 grid 아이템들의 공간으로 모두 채웁니다.
+  gap:5px을 통해 행과 열 사이 간격에 5px의 크기를 가진 테두리를 만듭니다.
+  div.nav__item과 div.post__row에 display:flex, justify-content:space-between을 줘서 자식 요소들 사이에 공간을 두고 수평 정렬합니다.
+  결론
+  auto-fit 을 사용해서 남는 column공간을 grid 아이템들의 공간으로 자동으로 채울 수 있습니다.
+  minmax()를 사용해서 행과 열의 최소, 최대 크기를 지정할 수 있습니다. minmax()의 첫 번째 인수는 최솟값이고 두 번째 인수는 최댓값입니다.
+  gap속성을 사용해서 grid 아이템 간의 행과 열 사이의 간격을 설정하고 테두리를 만들 수 있습니다.
+-->
