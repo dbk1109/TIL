@@ -14,6 +14,8 @@
   2. 환경
   3. 테스트
   4. 결과
+#### CodePen
+  > 코드펜([CODEPEN](https://codepen.io/)) 뉴스레터 번역 발행 기록
 #### CSS
   > 'CSS Layout 마스터클래스' 코딩챌린지 기록
 #### IT 5분 잡학사전
