@@ -14,3 +14,18 @@ function solution(food) {
   answer = answer + 0 + answer.split("").reverse().join("");
   return answer;
 }
+
+//콜라 문제
+function solution(bottle, setCount, iHave) {
+  var answer = 0;
+  let total = iHave;
+
+  while (total >= bottle) {
+    let newb = Math.floor(total / bottle) * setCount;
+    let left = total % bottle;
+    total = newb + left;
+    answer += newb;
+  }
+
+  return answer;
+}
