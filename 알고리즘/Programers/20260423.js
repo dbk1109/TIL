@@ -9,3 +9,10 @@ function solution(name, yearning, photo) {
 
   return result;
 }
+
+//폰켓몬
+function solution(nums) {
+  const MAX = nums.length / 2;
+  const SORT = [...new Set(nums)].length;
+  return MAX < SORT ? MAX : SORT;
+}
